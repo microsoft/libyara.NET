@@ -45,9 +45,9 @@ An x64 binary version is available on NuGet with the package id [libyara.NET](ht
 
 
 ## Reference
-See the [libyara C API documentation](http://yara.readthedocs.io/en/v3.4.0/capi.html) for a general overview on how to use libyara. This API is adapted to present an API that is more consistent with .NET so usage differs slightly, but the core concepts remain the same.
+See the [libyara C API documentation](http://yara.readthedocs.io/en/v3.4.0/capi.html) for a general overview on how to use libyara. This API is adapted to present an API that is more consistent with .NET so usage differs slightly, but the core concepts remain the same. Also, because this is built against a pre-release version of yara, the API may have changed slightly from the documentation.
 
-**TODO**
+**TODO: API Reference**
 
 ## Limitations
 
