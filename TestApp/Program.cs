@@ -28,6 +28,7 @@ namespace TestApp
                         rules = compiler.GetRules();
                     }
 
+                    // Scanner and ScanResults do not need to be disposed.
                     var scanner = new Scanner();
                     var results = scanner.ScanFile(".\\SampleFile.txt", rules);
                 }
