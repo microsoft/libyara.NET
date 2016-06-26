@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Compiler.h"
-#include "YaraTypes.h"
 #include "Rules.h"
+#include "YaraTypes.h"
 
 #include <yara.h>
 
@@ -63,7 +63,7 @@ namespace libyaraNET {
                 }
             }
 
-            return 0;
+            return (int)CallbackResult::Continue;
         }
     };
 }

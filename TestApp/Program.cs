@@ -14,13 +14,8 @@ namespace TestApp
         {
             using (var ctx = new YaraContext())
             {
-                var scanner = new ProcessScanner();
-                var results = scanner.Scan(20328);
+                var rules = Compiler.CompileRulesFile(".\\HelloWorldRules.yara");
 
-                foreach (var r in results)
-                {
-                    Console.WriteLine(r);
-                }
             }
         }
     }

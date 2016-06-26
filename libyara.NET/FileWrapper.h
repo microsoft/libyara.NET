@@ -4,6 +4,9 @@
 
 namespace libyaraNET {
 
+    /// <summary>
+    /// Exception that wraps errors encounted when opening files.
+    /// </summary>
     class file_error : public std::runtime_error
     {
         const errno_t error_;
@@ -17,6 +20,9 @@ namespace libyaraNET {
         errno_t error() const { return error_; }
     };
 
+    /// <summary>
+    /// RAII wrapper for accessing a FILE*.
+    /// </summary>
     class FileWrapper
     {
         FILE* file;
@@ -35,6 +41,9 @@ namespace libyaraNET {
             if (file) fclose(file);
         }
 
+        /// <summary>
+        /// Allow for implicit conversion to FILE*
+        /// </summary>
         operator FILE*() const
         {
             return file;

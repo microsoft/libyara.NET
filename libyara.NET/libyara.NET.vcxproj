@@ -93,6 +93,7 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <PrecompiledHeaderFile />
       <PrecompiledHeaderOutputFile />
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>user32.lib;gdi32.lib</AdditionalDependencies>
@@ -107,6 +108,7 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <PrecompiledHeaderFile />
       <PrecompiledHeaderOutputFile />
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>user32.lib;gdi32.lib</AdditionalDependencies>
@@ -120,6 +122,7 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <PrecompiledHeaderFile />
       <PrecompiledHeaderOutputFile />
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>user32.lib;gdi32.lib</AdditionalDependencies>
@@ -133,6 +136,7 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <PrecompiledHeaderFile />
       <PrecompiledHeaderOutputFile />
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>user32.lib;gdi32.lib</AdditionalDependencies>

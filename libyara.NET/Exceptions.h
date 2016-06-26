@@ -7,6 +7,9 @@ using namespace System::Collections::Generic;
 
 namespace libyaraNET {
 
+    /// <summary>
+    /// Represents a yara compilation error.
+    /// </summary>
     public ref class CompilationException : public Exception
     {
     public:
@@ -20,9 +23,17 @@ namespace libyaraNET {
         }
     };
 
+
+    /// <summary>
+    /// Error handling utilities
+    /// </summary>
     public ref class ErrorUtility abstract sealed
     {
     public:
+
+        /// <summary>
+        /// Throw the appropriate exception for the given yara error
+        /// </summary>
         static void ThrowOnError(int error)
         {
             switch (error)

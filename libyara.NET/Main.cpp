@@ -1,3 +1,5 @@
+// each header that defines types that are part of the
+// managed API must be added to this file.
 
 // there's a type redef in yara.h so this needs
 // to be included before anything that includes yara.h

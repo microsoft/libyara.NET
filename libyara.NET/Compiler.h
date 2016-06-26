@@ -19,7 +19,7 @@ namespace libyaraNET {
 
     /// <summary>
     /// Compiles yara rule files into Rules for scanning.
-    /// This class is NOT thread safe and should only be
+    /// This class is not thread safe and should only be
     /// called on the main thread.
     /// </summary>
     public ref class Compiler
@@ -53,10 +53,10 @@ namespace libyaraNET {
         /// <summary>
         /// Add rules from plain-text yara rule file.
         /// </summary>
-        void AddRuleFile(String^ rulesPath)
+        void AddRuleFile(String^ path)
         {
             compilationErrors->Clear();
-            auto nativePath = marshal_as<std::string>(rulesPath);
+            auto nativePath = marshal_as<std::string>(path);
 
             try
             {
@@ -104,6 +104,17 @@ namespace libyaraNET {
                 yr_compiler_get_rules(compiler, &rules));
 
             return gcnew Rules(rules);
+        }
+
+        /// <summary>
+        /// Get the compiled Rules for the specified yara rules file.
+        /// </summary>
+        static Rules^ CompileRulesFile(String^ path)
+        {
+            Compiler c;
+            c.AddRuleFile(path);
+
+            return c.GetRules();
         }
 
     private:
