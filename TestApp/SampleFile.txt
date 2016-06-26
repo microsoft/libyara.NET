@@ -1,0 +1,7 @@
+This is the sample file.
+
+It contains the string Hello World.
+
+It should match the HelloWorld yara rule.
+
+It also says Hello World twice.
