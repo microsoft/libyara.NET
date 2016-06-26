@@ -145,9 +145,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Compiler.h" />
+    <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="FileWrapper.h" />
+    <ClInclude Include="YaraTypes.h" />
+    <ClInclude Include="Match.h" />
+    <ClInclude Include="Rule.h" />
     <ClInclude Include="Rules.h" />
     <ClInclude Include="YaraContext.h" />
     <ClInclude Include="ProcessScanner.h" />
+    <ClInclude Include="YaraThreadContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
