@@ -11,7 +11,7 @@ namespace libyaraNET {
     /// scope of a YaraContext. One YaraContext object should be
     /// created per process and it should be created on the main thread.
     /// </summary>
-    public ref class YaraContext
+    public ref class YaraContext sealed
     {
     public:
         YaraContext()

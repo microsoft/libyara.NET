@@ -9,9 +9,9 @@ namespace libyaraNET {
     /// <summary>
     /// A container for compiled yara rules.
     /// </summary>
-    public ref class Rules
+    public ref class Rules sealed
     {
-        initonly YR_RULES* rules;
+        YR_RULES* rules;
 
     public:
         /// <summary>
@@ -32,6 +32,18 @@ namespace libyaraNET {
         operator YR_RULES*()
         {
             return rules;
+        }
+
+        /// <summary>
+        /// Release management of the underlying YR_RULES*
+        /// allowing another object to own the resource.
+        /// </summary>
+        YR_RULES* Release()
+        {
+            auto temp = rules;
+            rules = nullptr;
+
+            return temp;
         }
     };
 }

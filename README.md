@@ -12,5 +12,6 @@ See the TestApp project for an example of using this library in C#.
 
 ## Limitations
 
+* Rule metadata not supported
 * Modules are not currently supported
-* Scan results are collected and returned (as compared with the callback approach normally used) which may result in high memory use.
+* Scan results are collected and returned (as compared with the callback approach normally used) which may result in high memory use with rules that match many items.

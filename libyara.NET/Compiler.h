@@ -22,11 +22,11 @@ namespace libyaraNET {
     /// This class is not thread safe and should only be
     /// called on the main thread.
     /// </summary>
-    public ref class Compiler
+    public ref class Compiler sealed
     {
         initonly YR_COMPILER* compiler;
         initonly List<String^>^ compilationErrors;
-        initonly YaraCompilerCallback^ compilationCallback;
+        initonly YaraCompilerCallback^ compilerCallback;
 
     public:
         /// <summary>
@@ -40,8 +40,8 @@ namespace libyaraNET {
 
             compilationErrors = gcnew List<String^>();
 
-            compilationCallback = gcnew YaraCompilerCallback(this, &Compiler::HandleError);
-            auto funcPtr = Marshal::GetFunctionPointerForDelegate(compilationCallback).ToPointer();
+            compilerCallback = gcnew YaraCompilerCallback(this, &Compiler::HandleError);
+            auto funcPtr = Marshal::GetFunctionPointerForDelegate(compilerCallback).ToPointer();
             yr_compiler_set_callback(compiler, static_cast<YR_COMPILER_CALLBACK_FUNC>(funcPtr), nullptr);
         }
 

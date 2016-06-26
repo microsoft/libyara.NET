@@ -1,30 +1,42 @@
 #pragma once
 
+#include <msclr\marshal.h>
+#include <msclr\marshal_cppstd.h>
+
 #include <yara.h>
 
 using namespace System;
 using namespace System::Collections::Generic;
+using namespace msclr::interop;
 
 namespace libyaraNET {
 
-    // TODO: this is a bad idea, not threadsafe
-    // Maybe this should be singleton
-
-    public ref class Rule
+    public ref class Rule sealed
     {
     public:
         property String^ Identifier;
         property List<String^>^ Tags;
 
-
+        /// <summary>
+        /// Create an empty Rule. Useful for testing.
+        /// </summary>
         Rule()
         {
-            auto result = yr_initialize();
+            Identifier = nullptr;
+            Tags = gcnew List<String^>();
         }
 
-        ~Rule()
+        Rule(YR_RULE* rule)
         {
-            auto result = yr_finalize();
+            Identifier = marshal_as<String^>(rule->identifier);
+            Tags = gcnew List<String^>();
+
+            const char* tag = nullptr;
+
+            yr_rule_tags_foreach(rule, tag)
+            {
+                Tags->Add(marshal_as<String^>(tag));
+            }
         }
     };
 }

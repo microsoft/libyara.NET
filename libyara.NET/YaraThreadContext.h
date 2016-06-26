@@ -11,11 +11,9 @@ namespace libyaraNET {
     /// object. In C# use a using statement to ensure the
     /// thread is properly finalized.
     /// </summary>
-    public ref class YaraThreadContext
+    public ref class YaraThreadContext sealed
     {
     public:
-        YaraThreadContext() { }
-
         ~YaraThreadContext()
         {
             yr_finalize_thread();

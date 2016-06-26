@@ -14,5 +14,7 @@
 #include "Rules.h"
 #include "Rule.h"
 #include "Match.h"
+#include "Scanner.h"
+#include "ScanResult.h"
 
-#include "ProcessScanner.h"
+#include "QuickScan.h"

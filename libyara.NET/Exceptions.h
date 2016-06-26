@@ -8,9 +8,25 @@ using namespace System::Collections::Generic;
 namespace libyaraNET {
 
     /// <summary>
+    /// A generic yara error.
+    /// See http://yara.readthedocs.io/en/v3.4.0/capi.html
+    // for more information on yara error codes.
+    /// </summary>
+    public ref class YaraException sealed : public Exception
+    {
+    public:
+        YaraException(int error)
+            : Exception(String::Format("Yara error code {0}", error))
+        { }
+
+        // TODO: map error codes to nice strings
+    };
+
+
+    /// <summary>
     /// Represents a yara compilation error.
     /// </summary>
-    public ref class CompilationException : public Exception
+    public ref class CompilationException sealed : public Exception
     {
     public:
         property List<String^>^ Errors;
@@ -45,7 +61,7 @@ namespace libyaraNET {
                 throw gcnew OutOfMemoryException();
 
             default:
-                break;
+                throw gcnew YaraException(error);
             }
         }
     };
