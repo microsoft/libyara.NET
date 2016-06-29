@@ -30,7 +30,7 @@ namespace libyaraNET {
     public:
         /// <summary>
         /// Create a new scanner that can scan processes or files.
-        /// <summary>
+        /// </summary>
         Scanner()
         {
             scanCallback = gcnew YaraScanCallback(this, &Scanner::HandleMessage);

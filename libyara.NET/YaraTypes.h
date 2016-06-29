@@ -17,7 +17,7 @@ namespace libyaraNET {
     // YR_COMPILER_CALLBACK_FUNC
     [UnmanagedFunctionPointer(CallingConvention::Cdecl)]
     delegate void YaraCompilerCallback(
-        int error_level,
+        int errorLevel,
         const char* fileName,
         int lineNumber,
         const char* message,

@@ -15,6 +15,7 @@ namespace libyaraNET {
 
         /// <summary>
         /// Create an empty match. Useful for testing.
+        /// </summary>
         Match()
         {
             Base = 0;

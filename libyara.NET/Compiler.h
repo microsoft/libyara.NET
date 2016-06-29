@@ -35,7 +35,7 @@ namespace libyaraNET {
         Compiler()
         {
             YR_COMPILER* temp;
-            auto result = yr_compiler_create(&temp);
+            ErrorUtility::ThrowOnError(yr_compiler_create(&temp));
             compiler = temp;
 
             compilationErrors = gcnew List<String^>();
@@ -117,18 +117,32 @@ namespace libyaraNET {
             return c.GetRules();
         }
 
+        /// <summary>
+        /// Get the compiled Rules for the specified yara rules string.
+        /// </summary>
+        static Rules^ CompileRulesString(String^ rule)
+        {
+            Compiler c;
+            c.AddRuleString(rule);
+
+            return c.GetRules();
+        }
+
     private:
         void HandleError(
-            int error_level,
+            int errorLevel,
             const char* fileName,
             int lineNumber,
             const char* message,
             void* userData)
         {
+            UNREFERENCED_PARAMETER(errorLevel);
+            UNREFERENCED_PARAMETER(userData);
+
             auto msg = String::Format("{0} on line {1} in file: {2}",
                 marshal_as<String^>(message),
                 lineNumber,
-                FileNameInfo ? marshal_as<String^>(fileName) : "[none]");
+                fileName ? marshal_as<String^>(fileName) : "[none]");
 
             compilationErrors->Add(msg);
         }

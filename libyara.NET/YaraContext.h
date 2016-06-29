@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Exceptions.h"
+
 #include <yara.h>
 
 namespace libyaraNET {
@@ -16,12 +18,12 @@ namespace libyaraNET {
     public:
         YaraContext()
         {
-            auto result = yr_initialize();
+            ErrorUtility::ThrowOnError(yr_initialize());
         }
 
         ~YaraContext()
         {
-            auto result = yr_finalize();
+            yr_finalize();
         }
     };
 }

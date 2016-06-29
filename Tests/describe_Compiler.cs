@@ -45,5 +45,25 @@ namespace Tests
         {
             compiler.AddRuleFile(".\\Content\\InvalidRule.yara");
         }
+
+        [TestMethod]
+        public void compiler_exception_should_have_error_messages()
+        {
+            try
+            {
+                compiler.AddRuleString("rule test { bad }");
+            }
+            catch (CompilationException cex)
+            {
+                Assert.AreEqual(1, cex.Errors.Count);
+                Assert.AreEqual(
+                    "syntax error, unexpected _HEX_STRING_, expecting " +
+                    "'{' on line 1 in file: [none]", cex.Errors[0]);
+
+                return;
+            }
+
+            Assert.Fail("Expected invalid rule to throw.");
+        }
     }
 }
