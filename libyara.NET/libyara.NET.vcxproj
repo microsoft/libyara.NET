@@ -88,6 +88,7 @@
     <ClInclude Include="Compiler.h" />
     <ClInclude Include="Exceptions.h" />
     <ClInclude Include="FileWrapper.h" />
+    <ClInclude Include="GCHandleWrapper.h" />
     <ClInclude Include="QuickScan.h" />
     <ClInclude Include="ScanResult.h" />
     <ClInclude Include="YaraTypes.h" />

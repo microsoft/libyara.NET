@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Exceptions.h"
+#include "GCHandleWrapper.h"
 #include "Rules.h"
 #include "ScanResult.h"
 #include "YaraTypes.h"
@@ -14,11 +15,17 @@ using namespace System::Runtime::InteropServices;
 
 namespace libyaraNET {
 
+    public interface class IScanner
+    {
+        List<ScanResult^>^ ScanFile(String^ path, Rules^ rules);
+        List<ScanResult^>^ ScanProcess(int processId, Rules^ rules);
+    };
+
     /// <summary>
     /// Wraps the yara scanning functions to scan processes or files.
     /// This calls to the scanning functions is threadsafe.
     /// </summary>
-    public ref class Scanner sealed
+    public ref class Scanner sealed : IScanner
     {
         // TODO make parameters
         const int DefaultScanFlags = (int)ScanFlags::None;
@@ -41,14 +48,14 @@ namespace libyaraNET {
         /// <summary>
         /// Scan a file with the specified rules.
         /// </summary>
-        List<ScanResult^>^ ScanFile(String^ path, Rules^ rules)
+        virtual List<ScanResult^>^ ScanFile(String^ path, Rules^ rules)
         {
             if (!File::Exists(path))
                 throw gcnew FileNotFoundException(path);
 
             auto results = gcnew List<ScanResult^>();
-            auto resultsHandle = GCHandle::Alloc(results);
             auto nativePath = marshal_as<std::string>(path);
+            GCHandleWrapper resultsHandle(results);
 
             ErrorUtility::ThrowOnError(
                 yr_rules_scan_file(
@@ -56,7 +63,7 @@ namespace libyaraNET {
                     nativePath.c_str(),
                     DefaultScanFlags,
                     callbackPtr,
-                    GCHandle::ToIntPtr(resultsHandle).ToPointer(),
+                    resultsHandle.GetPointer(),
                     TimeoutSeconds));
 
             return results;
@@ -65,10 +72,10 @@ namespace libyaraNET {
         /// <summary>
         /// Scan a process's memory with the specified rules.
         /// </summary>
-        List<ScanResult^>^ ScanProcess(int processId, Rules^ rules)
+        virtual List<ScanResult^>^ ScanProcess(int processId, Rules^ rules)
         {
             auto results = gcnew List<ScanResult^>();
-            auto resultsHandle = GCHandle::Alloc(results);
+            GCHandleWrapper resultsHandle(results);
 
             ErrorUtility::ThrowOnError(
                 yr_rules_scan_proc(
@@ -76,7 +83,7 @@ namespace libyaraNET {
                     processId,
                     DefaultScanFlags,
                     callbackPtr,
-                    GCHandle::ToIntPtr(resultsHandle).ToPointer(),
+                    resultsHandle.GetPointer(),
                     TimeoutSeconds));
 
             return results;
