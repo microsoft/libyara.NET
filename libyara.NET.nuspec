@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>libyara.NET</id>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <authors>kallanreed@outlook.com</authors>
     <owners>kallanreed@outlook.com</owners>
     <licenseUrl>https://github.com/kallanreed/libyara.NET/blob/master/LICENSE</licenseUrl>
@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <title>libyara.NET</title>
     <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools.</description>
-    <releaseNotes>Fix memory leak caused by unfreed GC handles.</releaseNotes>
+    <releaseNotes>Adding support for scan flags and memory scanning.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>yara libyara virustotal</tags>
   </metadata>

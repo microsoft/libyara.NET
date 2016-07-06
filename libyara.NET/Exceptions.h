@@ -32,7 +32,8 @@ namespace libyaraNET {
         property List<String^>^ Errors;
 
         CompilationException(List<String^>^ errors)
-            : Exception("Error compiling rules. See Errors property for details.")
+            : Exception(String::Format(
+                "Error compiling rules.\n{0}", String::Join("\n", errors)))
         {
             // copy the list so other callers can't mess with it
             Errors = gcnew List<String^>(errors);

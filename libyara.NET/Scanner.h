@@ -18,7 +18,15 @@ namespace libyaraNET {
     public interface class IScanner
     {
         List<ScanResult^>^ ScanFile(String^ path, Rules^ rules);
+        List<ScanResult^>^ ScanFile(String^ path, Rules^ rules, ScanFlags flags);
+
         List<ScanResult^>^ ScanProcess(int processId, Rules^ rules);
+        List<ScanResult^>^ ScanProcess(int processId, Rules^ rules, ScanFlags flags);
+
+        List<ScanResult^>^ ScanMemory(array<uint8_t>^ buffer, Rules^ rules);
+        List<ScanResult^>^ ScanMemory(array<uint8_t>^ buffer, Rules^ rules, ScanFlags flags);
+        List<ScanResult^>^ ScanMemory(IntPtr buffer, int length, Rules^ rules);
+        List<ScanResult^>^ ScanMemory(IntPtr buffer, int length,  Rules^ rules, ScanFlags flags);
     };
 
     /// <summary>
@@ -27,8 +35,7 @@ namespace libyaraNET {
     /// </summary>
     public ref class Scanner sealed : IScanner
     {
-        // TODO make parameters
-        const int DefaultScanFlags = (int)ScanFlags::None;
+        // TODO make parameter
         const int TimeoutSeconds = 10000;
 
         YR_CALLBACK_FUNC callbackPtr;
@@ -50,6 +57,17 @@ namespace libyaraNET {
         /// </summary>
         virtual List<ScanResult^>^ ScanFile(String^ path, Rules^ rules)
         {
+            return ScanFile(path, rules, ScanFlags::None);
+        }
+
+        /// <summary>
+        /// Scan a file with the specified rules.
+        /// </summary>
+        virtual List<ScanResult^>^ ScanFile(
+            String^ path,
+            Rules^ rules,
+            ScanFlags flags)
+        {
             if (!File::Exists(path))
                 throw gcnew FileNotFoundException(path);
 
@@ -61,7 +79,7 @@ namespace libyaraNET {
                 yr_rules_scan_file(
                     rules,
                     nativePath.c_str(),
-                    DefaultScanFlags,
+                    (int)flags,
                     callbackPtr,
                     resultsHandle.GetPointer(),
                     TimeoutSeconds));
@@ -74,6 +92,17 @@ namespace libyaraNET {
         /// </summary>
         virtual List<ScanResult^>^ ScanProcess(int processId, Rules^ rules)
         {
+            return ScanProcess(processId, rules, ScanFlags::None);
+        }
+
+        /// <summary>
+        /// Scan a process's memory with the specified rules.
+        /// </summary>
+        virtual List<ScanResult^>^ ScanProcess(
+            int processId,
+            Rules^ rules,
+            ScanFlags flags)
+        {
             auto results = gcnew List<ScanResult^>();
             GCHandleWrapper resultsHandle(results);
 
@@ -81,7 +110,78 @@ namespace libyaraNET {
                 yr_rules_scan_proc(
                     rules,
                     processId,
-                    DefaultScanFlags,
+                    (int)flags,
+                    callbackPtr,
+                    resultsHandle.GetPointer(),
+                    TimeoutSeconds));
+
+            return results;
+        }
+
+        /// <summary>
+        /// Scan a byte array with the specified rules.
+        /// </summary>
+        virtual List<ScanResult^>^ ScanMemory(array<uint8_t>^ buffer, Rules^ rules)
+        {
+            return ScanMemory(buffer, rules, ScanFlags::None);
+        }
+
+        /// <summary>
+        /// Scan a byte array with the specified rules.
+        /// </summary>
+        virtual List<ScanResult^>^ ScanMemory(
+            array<uint8_t>^ buffer,
+            Rules^ rules,
+            ScanFlags flags)
+        {
+            if (buffer == nullptr || buffer->Length == 0)
+                return gcnew List<ScanResult^>();
+
+            pin_ptr<uint8_t> pinned = &buffer[0];
+            return ScanMemory(pinned, buffer->Length, rules, ScanFlags::None);
+        }
+
+        /// <summary>
+        /// Scan a memory block with the specified rules.
+        /// </summary>
+        virtual List<ScanResult^>^ ScanMemory(
+            IntPtr buffer,
+            int length,
+            Rules^ rules)
+        {
+            return ScanMemory(buffer, length, rules, ScanFlags::None);
+        }
+
+        /// <summary>
+        /// Scan a memory block with the specified rules.
+        /// </summary>
+        virtual List<ScanResult^>^ ScanMemory(
+            IntPtr buffer,
+            int length,
+            Rules^ rules,
+            ScanFlags flags)
+        {
+            return ScanMemory((uint8_t*)buffer.ToPointer(), length, rules, flags);
+        }
+
+        /// <summary>
+        /// Scan a memory block with the specified rules.
+        /// </summary>
+        virtual List<ScanResult^>^ ScanMemory(
+            uint8_t* buffer,
+            int length,
+            Rules^ rules,
+            ScanFlags flags)
+        {
+            auto results = gcnew List<ScanResult^>();
+            GCHandleWrapper resultsHandle(results);
+
+            ErrorUtility::ThrowOnError(
+                yr_rules_scan_mem(
+                    rules,
+                    buffer,
+                    length,
+                    (int)flags,
                     callbackPtr,
                     resultsHandle.GetPointer(),
                     TimeoutSeconds));

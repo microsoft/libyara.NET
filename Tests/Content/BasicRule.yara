@@ -1,8 +1,8 @@
 rule BasicRule
 {
     strings:
-        $test: "hello world"
+        $hw = "hello world"
 
     condition:
-        $test
+        $hw
 }
