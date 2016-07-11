@@ -3,7 +3,7 @@ A .NET wrapper for libyara that provides a simplified API for developing tools i
 
 This library is built against the [libyara NuGet pre-release](https://www.nuget.org/packages/libyara_vs2015_prerelease/) package which is based on yara's master branch. It contains the latest features and fixes (as well as any bugs) that may not be in the latest release builds of yara (currently 3.4).
 
-An x64 binary version is available on NuGet with the package id [libyara.NET](https://www.nuget.org/packages/libyara.NET). The public key token of official binaries is 176e062142c9110f.
+An x64 binary version is available on NuGet with the package id [libyara.NET](https://www.nuget.org/packages/libyara.NET). The public key token of official binaries is `176e062142c9110f`.
 
 ## Quick Start
 
