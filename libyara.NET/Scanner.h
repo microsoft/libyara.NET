@@ -138,7 +138,7 @@ namespace libyaraNET {
                 return gcnew List<ScanResult^>();
 
             pin_ptr<uint8_t> pinned = &buffer[0];
-            return ScanMemory(pinned, buffer->Length, rules, ScanFlags::None);
+            return ScanMemory(pinned, buffer->Length, rules, flags);
         }
 
         /// <summary>

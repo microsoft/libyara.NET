@@ -12,7 +12,7 @@ namespace libyaraNET {
     /// </summary>
     ref class GCHandleWrapper
     {
-        initonly GCHandle handle;
+        GCHandle handle;
 
     public:
         /// <summary>

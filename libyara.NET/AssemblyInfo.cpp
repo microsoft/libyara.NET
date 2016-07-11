@@ -10,7 +10,7 @@ using namespace System::Security::Permissions;
 // associated with an assembly.
 //
 [assembly:AssemblyTitleAttribute(L"libyara.NET")];
-[assembly:AssemblyDescriptionAttribute(L"")];
+[assembly:AssemblyDescriptionAttribute(L".NET wrapper for libyara built in C++ CLI used to easily incorporate yara into .NET projects")];
 [assembly:AssemblyConfigurationAttribute(L"")];
 [assembly:AssemblyCompanyAttribute(L"")];
 [assembly:AssemblyProductAttribute(L"libyara.NET")];
@@ -29,7 +29,7 @@ using namespace System::Security::Permissions;
 // You can specify all the value or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly:AssemblyVersionAttribute("0.0.0.1")];
+[assembly:AssemblyVersionAttribute("0.0.0.5")];
 
 [assembly:ComVisible(false)];
 

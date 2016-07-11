@@ -46,9 +46,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <LinkKeyFile>$(SolutionDir)libyara.net.snk</LinkKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <LinkKeyFile>$(SolutionDir)libyara.net.snk</LinkKeyFile>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -64,6 +66,12 @@
     <Link>
       <AdditionalDependencies>user32.lib;gdi32.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist  ..\libyara.net.snk sn.exe -k ..\libyara.net.snk</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Verify snk file is generated</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -78,6 +86,12 @@
     <Link>
       <AdditionalDependencies>user32.lib;gdi32.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist  ..\libyara.net.snk sn.exe -k ..\libyara.net.snk</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Verify snk file is generated</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Reference Include="System" />
