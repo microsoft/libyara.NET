@@ -1,7 +1,7 @@
 # libyara.NET
 A .NET wrapper for libyara that provides a simplified API for developing tools in C# and PowerShell. This library targets .NET 4.5.
 
-This library is built against the [libyara NuGet pre-release](https://www.nuget.org/packages/libyara_vs2015_prerelease/) package which is based on yara's master branch. It contains the latest features and fixes (as well as any bugs) that may not be in the latest release builds of yara (currently 3.4).
+This library is built against the [libyara NuGet pre-release](https://www.nuget.org/packages/libyara_vs2015_prerelease/) package which is based on yara's master branch. It contains the latest features and fixes (as well as any bugs) that may not be in the latest release builds of yara (currently 3.5).
 
 An x64 binary version is available on NuGet with the package id [libyara.NET](https://www.nuget.org/packages/libyara.NET). The public key token of official binaries is `176e062142c9110f`.
 
@@ -45,7 +45,7 @@ An x64 binary version is available on NuGet with the package id [libyara.NET](ht
 
 
 ## Reference
-See the [libyara C API documentation](http://yara.readthedocs.io/en/v3.4.0/capi.html) for a general overview on how to use libyara. This API is adapted to present an API that is more consistent with .NET so usage differs slightly, but the core concepts remain the same. Also, because this is built against a pre-release version of yara, the API may have changed slightly from the documentation.
+See the [libyara C API documentation](http://yara.readthedocs.io/en/v3.5.0/capi.html) for a general overview on how to use libyara. This API is adapted to present an API that is more consistent with .NET so usage differs slightly, but the core concepts remain the same. Also, because this is built against a pre-release version of yara, the API may have changed slightly from the documentation.
 
 **TODO: API Reference**
 
