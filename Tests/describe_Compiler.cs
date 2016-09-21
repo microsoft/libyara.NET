@@ -65,5 +65,14 @@ namespace Tests
 
             Assert.Fail("Expected invalid rule to throw.");
         }
+
+        [TestMethod]
+        public void given_hash_rule_it_should_compile()
+        {
+            // there was a breaking change that caused libyara to be compiled
+            // without cuckoo or hash module support, this is to catch that
+
+            compiler.AddRuleString("import \"hash\" rule test { condition: hash.md5(0, 100) == \"abc\"}");
+        }
     }
 }

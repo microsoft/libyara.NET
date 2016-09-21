@@ -126,13 +126,13 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\yara-vs2015-binary-dependencies.0.0.1\build\native\yara-vs2015-binary-dependencies.targets" Condition="Exists('..\packages\yara-vs2015-binary-dependencies.0.0.1\build\native\yara-vs2015-binary-dependencies.targets')" />
-    <Import Project="..\packages\libyara_vs2015_prerelease.3.5.0\build\native\libyara_vs2015_prerelease.targets" Condition="Exists('..\packages\libyara_vs2015_prerelease.3.5.0\build\native\libyara_vs2015_prerelease.targets')" />
+    <Import Project="..\packages\libyara_vs2015_prerelease.3.5.1\build\native\libyara_vs2015_prerelease.targets" Condition="Exists('..\packages\libyara_vs2015_prerelease.3.5.1\build\native\libyara_vs2015_prerelease.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\yara-vs2015-binary-dependencies.0.0.1\build\native\yara-vs2015-binary-dependencies.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\yara-vs2015-binary-dependencies.0.0.1\build\native\yara-vs2015-binary-dependencies.targets'))" />
-    <Error Condition="!Exists('..\packages\libyara_vs2015_prerelease.3.5.0\build\native\libyara_vs2015_prerelease.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\libyara_vs2015_prerelease.3.5.0\build\native\libyara_vs2015_prerelease.targets'))" />
+    <Error Condition="!Exists('..\packages\libyara_vs2015_prerelease.3.5.1\build\native\libyara_vs2015_prerelease.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\libyara_vs2015_prerelease.3.5.1\build\native\libyara_vs2015_prerelease.targets'))" />
   </Target>
 </Project>
