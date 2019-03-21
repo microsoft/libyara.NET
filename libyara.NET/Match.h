@@ -30,7 +30,7 @@ namespace libyaraNET {
 
             Data = gcnew array<uint8_t>(match->match_length);
             Marshal::Copy(
-                IntPtr(match->data),
+                IntPtr((void*) match->data),
                 Data,
                 0,
                 match->data_length);
