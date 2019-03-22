@@ -24,5 +24,6 @@
     <file src="x64\Release\*.xml" target="build\x64\" />
 
     <file src="libyara.NET.props" target="build\net46\" />
+    <file src="libyara.NET.targets" target="build\net46\" />
   </files>
 </package>
