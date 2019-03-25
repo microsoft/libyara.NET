@@ -1,9 +1,9 @@
 # libyara.NET
-A .NET wrapper for libyara that provides a simplified API for developing tools in C# and PowerShell. This library targets .NET 4.5.
+A .NET wrapper for libyara that provides a simplified API for developing tools in C# and PowerShell. This library targets .NET 4.6.
 
-This library is built against the [libyara NuGet pre-release](https://www.nuget.org/packages/libyara_vs2015_prerelease/) package which is based on yara's master branch. It contains the latest features and fixes (as well as any bugs) that may not be in the latest release builds of yara (currently 3.5).
+This library is built against the [Microsoft.O365.Security.Native.Libyara](https://www.nuget.org/packages/Microsoft.O365.Security.Native.Libyara/) package which is based on VirusTotal's [yara](https://github.com/VirusTotal/yara/) built with [vcpkg](https://github.com/Microsoft/vcpkg/). This library is currently based on commit `e3439e4ead4ed5d3b75a0b46eaf15ddda2110bb9` of [yara](https://github.com/VirusTotal/yara/tree/e3439e4ead4ed5d3b75a0b46eaf15ddda2110bb9/). We will update [yara](https://github.com/VirusTotal/yara/) version to include the latest features and bug fixes if necessary.
 
-x86 and x64 binary versions are available on NuGet with the package id [libyara.NET](https://www.nuget.org/packages/libyara.NET). The public key token of official binaries is `176e062142c9110f`. Projects that use libyara.NET should use 'All CPU' or 'x86' as the platform name to select the x86 binaries and use 'x64' to select the x64 binaries.
+x86 and x64 binary versions are available on NuGet with the package id [Microsoft.O365.Security.Native.libyara.NET](https://www.nuget.org/packages/Microsoft.O365.Security.Native.libyara.NET/). The public key token of official binaries is `31bf3856ad364e35`. Projects that use libyara.NET should use 'All CPU' or 'x86' as the platform name to select the x86 binaries and use 'x64' to select the x64 binaries.
 
 ## Quick Start
 
@@ -45,7 +45,7 @@ x86 and x64 binary versions are available on NuGet with the package id [libyara.
 
 
 ## Reference
-See the [libyara C API documentation](http://yara.readthedocs.io/en/v3.5.0/capi.html) for a general overview on how to use libyara. This API is adapted to present an API that is more consistent with .NET so usage differs slightly, but the core concepts remain the same. Also, because this is built against a pre-release version of yara, the API may have changed slightly from the documentation.
+See the [libyara C API documentation](http://yara.readthedocs.io/en/v3.5.0/capi.html) for a general overview on how to use libyara. This API is adapted to present an API that is more consistent with .NET so usage differs slightly, but the core concepts remain the same.
 
 **TODO: API Reference**
 

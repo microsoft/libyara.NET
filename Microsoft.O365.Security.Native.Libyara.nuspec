@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Microsoft.O365.Security.Native.Libyara</id>
+    <version>1.0.0</version>
+    <authors>Microsoft</authors>
+    <licenseUrl>https://github.com/Microsoft/libyara.NET/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Microsoft/libyara.NET</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <title>Microsoft.O365.Security.Native.Libyara</title>
+    <description>VirusTotal's libyara native nuget package built with vcpkg. This nuget package is a dependency of libyara.NET project.</description>
+    <summary>x86 and x64 binary versions are available for Windows in this package. Projects that use this package should use 'x86' or 'Win32' as the platform name to select the x86 binaries and use 'x64' to select the x64 binaries.</summary>
+    <releaseNotes>Initial version</releaseNotes>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>native libyara vcpkg odspsecurity</tags>
+  </metadata>
+  <files>
+    <file src="vcpkg\installed\x64-windows\include\**" target="lib\native\include" />
+    <file src="vcpkg\installed\x64-windows\bin\**" target="lib\native\x64\bin" />
+    <file src="vcpkg\installed\x64-windows\lib\**" exclude="installed\x64-windows\lib\pkgconfig\**" target="lib\native\x64\lib" />
+    <file src="vcpkg\installed\x86-windows\bin\**" target="lib\native\x86\bin" />
+    <file src="vcpkg\installed\x86-windows\lib\**" exclude="installed\x86-windows\lib\pkgconfig\**" target="lib\native\x86\lib" />
+    <file src="Microsoft.O365.Security.Native.Libyara.targets" target="build\native\Microsoft.O365.Security.Native.Libyara.targets" />
+  </files>
+</package>

@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{347CBFF6-30D8-40FB-AE4E-8F1508117A38}</ProjectGuid>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>libyaraNET</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -74,19 +74,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <LinkKeyFile>$(SolutionDir)libyara.net.snk</LinkKeyFile>
+    <LinkKeyFile>$(SolutionDir)35MSSharedLib1024.snk</LinkKeyFile>
+    <LinkDelaySign>true</LinkDelaySign>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LinkKeyFile>$(SolutionDir)libyara.net.snk</LinkKeyFile>
+    <LinkKeyFile>$(SolutionDir)35MSSharedLib1024.snk</LinkKeyFile>
+    <LinkDelaySign>true</LinkDelaySign>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <LinkKeyFile>$(SolutionDir)libyara.net.snk</LinkKeyFile>
+    <LinkKeyFile>$(SolutionDir)35MSSharedLib1024.snk</LinkKeyFile>
+    <LinkDelaySign>true</LinkDelaySign>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <LinkKeyFile>$(SolutionDir)libyara.net.snk</LinkKeyFile>
+    <LinkKeyFile>$(SolutionDir)35MSSharedLib1024.snk</LinkKeyFile>
+    <LinkDelaySign>true</LinkDelaySign>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -100,10 +104,10 @@
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>if not exist  ..\libyara.net.snk sn.exe -k ..\libyara.net.snk</Command>
+      <Command>if not exist  ..\35MSSharedLib1024.snk sn.exe -k ..\35MSSharedLib1024.snk</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Verify snk file is generated</Message>
@@ -123,10 +127,10 @@
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>if not exist  ..\libyara.net.snk sn.exe -k ..\libyara.net.snk</Command>
+      <Command>if not exist  ..\35MSSharedLib1024.snk sn.exe -k ..\35MSSharedLib1024.snk</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Verify snk file is generated</Message>
@@ -143,10 +147,10 @@
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>if not exist  ..\libyara.net.snk sn.exe -k ..\libyara.net.snk</Command>
+      <Command>if not exist  ..\35MSSharedLib1024.snk sn.exe -k ..\35MSSharedLib1024.snk</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Verify snk file is generated</Message>
@@ -165,10 +169,10 @@
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>if not exist  ..\libyara.net.snk sn.exe -k ..\libyara.net.snk</Command>
+      <Command>if not exist  ..\35MSSharedLib1024.snk sn.exe -k ..\35MSSharedLib1024.snk</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Verify snk file is generated</Message>
@@ -206,14 +210,12 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\yara-vs2015-binary-dependencies.0.0.1\build\native\yara-vs2015-binary-dependencies.targets" Condition="Exists('..\packages\yara-vs2015-binary-dependencies.0.0.1\build\native\yara-vs2015-binary-dependencies.targets')" />
-    <Import Project="..\packages\libyara_vs2015_prerelease.3.5.1\build\native\libyara_vs2015_prerelease.targets" Condition="Exists('..\packages\libyara_vs2015_prerelease.3.5.1\build\native\libyara_vs2015_prerelease.targets')" />
+    <Import Project="..\packages\Microsoft.O365.Security.Native.Libyara.1.0.0\build\native\Microsoft.O365.Security.Native.Libyara.targets" Condition="Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.0\build\native\Microsoft.O365.Security.Native.Libyara.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\yara-vs2015-binary-dependencies.0.0.1\build\native\yara-vs2015-binary-dependencies.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\yara-vs2015-binary-dependencies.0.0.1\build\native\yara-vs2015-binary-dependencies.targets'))" />
-    <Error Condition="!Exists('..\packages\libyara_vs2015_prerelease.3.5.1\build\native\libyara_vs2015_prerelease.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\libyara_vs2015_prerelease.3.5.1\build\native\libyara_vs2015_prerelease.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.0\build\native\Microsoft.O365.Security.Native.Libyara.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.O365.Security.Native.Libyara.1.0.0\build\native\Microsoft.O365.Security.Native.Libyara.targets'))" />
   </Target>
 </Project>
