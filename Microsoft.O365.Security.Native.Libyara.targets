@@ -21,14 +21,4 @@
       <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup Condition="'$(Platform)' == 'x86' Or '$(Platform)' == 'Win32'">
-    <None Include="$(MSBuildThisFileDirectory)..\..\lib\native\x86\bin\*">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Platform)' == 'x64'">
-    <None Include="$(MSBuildThisFileDirectory)..\..\lib\native\x64\bin\*">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 </Project>
