@@ -2,27 +2,28 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET</id>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
     <authors>Microsoft</authors>
     <licenseUrl>https://github.com/Microsoft/libyara.NET/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <title>Microsoft.O365.Security.Native.libyara.NET</title>
-    <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools.</description>
-    <releaseNotes>Change native libyara reference to a new source and update project settings. Please post any issues on GitHub.</releaseNotes>
+    <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Support both 32-bit and 64-bit of .NET framework 4.6</description>
+    <releaseNotes>Update native yara bits; remove dependencies on external native dlls</releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-    <tags>yara libyara virustotal managed 4.0.0</tags>
+    <tags>yara libyara virustotal managed 4.0.1</tags>
   </metadata>
   <files>
-    <file src="Release\*.dll" target="build\x86\" />
-    <file src="Release\*.pdb" target="build\x86\" />
-    <file src="Release\*.xml" target="build\x86\" />
+    <!-- Runtime libraries for x86 -->
+    <file src="Release\*.dll" target="build\x86" />
+    <file src="Release\*.pdb" target="build\x86" />
+    <file src="Release\*.xml" target="build\x86" />
 
-    <file src="x64\Release\*.dll" target="build\x64\" />
-    <file src="x64\Release\*.pdb" target="build\x64\" />
-    <file src="x64\Release\*.xml" target="build\x64\" />
+    <!-- Runtime libraries for x64 -->
+    <file src="x64\Release\*.dll" target="build\x64" />
+    <file src="x64\Release\*.pdb" target="build\x64" />
+    <file src="x64\Release\*.xml" target="build\x64" />
 
     <file src="Microsoft.O365.Security.Native.libyara.NET.props" target="build\net46\" />
-    <file src="Microsoft.O365.Security.Native.libyara.NET.targets" target="build\net46\" />
   </files>
 </package>
