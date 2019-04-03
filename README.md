@@ -3,7 +3,11 @@ A .NET wrapper for libyara that provides a simplified API for developing tools i
 
 This library is built against the [Microsoft.O365.Security.Native.Libyara](https://www.nuget.org/packages/Microsoft.O365.Security.Native.Libyara/) package which is based on VirusTotal's [yara](https://github.com/VirusTotal/yara/) built with [vcpkg](https://github.com/Microsoft/vcpkg/). This library is currently based on commit `e3439e4ead4ed5d3b75a0b46eaf15ddda2110bb9` of [yara](https://github.com/VirusTotal/yara/tree/e3439e4ead4ed5d3b75a0b46eaf15ddda2110bb9/). We will update [yara](https://github.com/VirusTotal/yara/) version to include the latest features and bug fixes if necessary.
 
-x86 and x64 binary versions are available on NuGet with the package id [Microsoft.O365.Security.Native.libyara.NET](https://www.nuget.org/packages/Microsoft.O365.Security.Native.libyara.NET/). The public key token of official binaries is `31bf3856ad364e35`. Projects that use libyara.NET should use 'All CPU' or 'x86' as the platform name to select the x86 binaries and use 'x64' to select the x64 binaries.
+This library is avaiable in forms of two NuGet packages, depending on your project types:
+
+For .NET framework projects, x86 and x64 binary versions are available on NuGet with the package id [Microsoft.O365.Security.Native.libyara.NET](https://www.nuget.org/packages/Microsoft.O365.Security.Native.libyara.NET/). The public key token of official binaries is `31bf3856ad364e35`. Projects that use libyara.NET should use 'All CPU' or 'x86' as the platform name to select the x86 binaries and use 'x64' to select the x64 binaries.
+
+For .NET Core projects, only x64 binary version is avaiable on NuGet with the package id [Microsoft.O365.Security.Native.libyara.NET.Core](https://www.nuget.org/packages/Microsoft.O365.Security.Native.libyara.NET.Core/). The public key token of official binaries is `31bf3856ad364e35`. Projects that use libyara.NET should use 'x64' as the platform name to use this NuGet package.
 
 ## Quick Start
 
