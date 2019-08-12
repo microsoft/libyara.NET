@@ -74,5 +74,11 @@ namespace Tests
 
             compiler.AddRuleString("import \"hash\" rule test { condition: hash.md5(0, 100) == \"abc\"}");
         }
+
+        [TestMethod]
+        public void given_file_of_combined_rules_it_should_compile()
+        {
+            compiler.AddRuleFile(".\\Content\\CombinedRules.yara");
+        }
     }
 }
