@@ -1,8 +1,11 @@
 #pragma once
 
+#include "Rule.h"
+
 #include <yara.h>
 
 using namespace System;
+using namespace System::Collections::Generic;
 
 namespace libyaraNET {
 
@@ -44,6 +47,23 @@ namespace libyaraNET {
             rules = nullptr;
 
             return temp;
+        }
+
+        /// <summary>
+        /// Split the compiled Rules set(i.e. YR_RULES) to
+        /// get a list of compiled Rule objects(i.e. YR_RULE)
+        /// </summary>
+        List<Rule^>^ GetRules()
+        {
+            auto results = gcnew List<Rule^>();
+
+            YR_RULE* rule;
+            yr_rules_foreach(rules, rule)
+            {
+                results->Add(gcnew Rule(rule));
+            }
+
+            return results;
         }
     };
 }
