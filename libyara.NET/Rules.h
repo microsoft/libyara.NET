@@ -50,7 +50,7 @@ namespace libyaraNET {
         }
 
         /// <summary>
-        /// Iterate the compiled Rules set(i.e. YR_RULES) and
+        /// Split the compiled Rules set(i.e. YR_RULES) to
         /// get a list of compiled Rule objects(i.e. YR_RULE)
         /// </summary>
         List<Rule^>^ GetRules()

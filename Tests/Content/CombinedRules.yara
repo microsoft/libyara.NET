@@ -1,4 +1,4 @@
-rule ExampleRule1
+rule ExampleRule1 : HelloTag
 {
     strings:
         $ex = "example 1"
@@ -7,7 +7,7 @@ rule ExampleRule1
         $ex
 }
 
-rule ExampleRule2
+rule ExampleRule2 : HelloTag HelloTag2
 {
     strings:
         $ex = "example 2"
