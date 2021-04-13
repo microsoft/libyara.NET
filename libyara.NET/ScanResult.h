@@ -31,7 +31,7 @@ namespace libyaraNET {
             Matches = gcnew Dictionary<String^, List<Match^>^>();
         }
 
-        ScanResult(YR_RULE* matchingRule)
+        ScanResult(YR_SCAN_CONTEXT* context, YR_RULE* matchingRule)
         {
             MatchingRule = gcnew Rule(matchingRule);
             Matches = gcnew Dictionary<String^, List<Match^>^>();
@@ -42,7 +42,6 @@ namespace libyaraNET {
             yr_rule_strings_foreach(matchingRule, string)
             {
                 auto identifier = marshal_as<String^>(string->identifier);
-                YR_SCAN_CONTEXT* context = nullptr;
 
                 yr_string_matches_foreach(context, string, match)
                 {
