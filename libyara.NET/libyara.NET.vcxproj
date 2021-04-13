@@ -104,7 +104,7 @@
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib;crypt32.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>if not exist  ..\35MSSharedLib1024.snk sn.exe -k ..\35MSSharedLib1024.snk</Command>
