@@ -190,14 +190,14 @@ namespace libyaraNET {
         }
 
     private:
-        int HandleMessage(int message, void* data, void* context)
+        int HandleMessage(YR_SCAN_CONTEXT* context, int message, void* message_data, void* user_data)
         {
             if (message == CALLBACK_MSG_RULE_MATCHING)
             {
-                auto resultsHandle = GCHandle::FromIntPtr(IntPtr(context));
+                auto resultsHandle = GCHandle::FromIntPtr(IntPtr(user_data));
                 auto results = (List<ScanResult^>^)resultsHandle.Target;
 
-                results->Add(gcnew ScanResult((YR_RULE*)data));
+                results->Add(gcnew ScanResult(context, (YR_RULE*)message_data));
             }
 
             return (int)CallbackResult::Continue;

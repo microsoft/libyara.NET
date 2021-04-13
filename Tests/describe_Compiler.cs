@@ -57,7 +57,7 @@ namespace Tests
             {
                 Assert.AreEqual(1, cex.Errors.Count);
                 Assert.AreEqual(
-                    "syntax error, unexpected _HEX_STRING_, expecting " +
+                    "syntax error, unexpected hex string, expecting " +
                     "'{' on line 1 in file: [none]", cex.Errors[0]);
 
                 return;

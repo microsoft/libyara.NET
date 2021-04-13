@@ -133,6 +133,7 @@ namespace libyaraNET {
             int errorLevel,
             const char* fileName,
             int lineNumber,
+            const YR_RULE* rule,
             const char* message,
             void* userData)
         {

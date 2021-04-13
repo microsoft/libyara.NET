@@ -104,7 +104,7 @@
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib;crypt32.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>if not exist  ..\35MSSharedLib1024.snk sn.exe -k ..\35MSSharedLib1024.snk</Command>
@@ -127,7 +127,7 @@
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib;crypt32.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>if not exist  ..\35MSSharedLib1024.snk sn.exe -k ..\35MSSharedLib1024.snk</Command>
@@ -147,7 +147,7 @@
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib;crypt32.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>if not exist  ..\35MSSharedLib1024.snk sn.exe -k ..\35MSSharedLib1024.snk</Command>
@@ -169,7 +169,7 @@
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib;crypt32.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>if not exist  ..\35MSSharedLib1024.snk sn.exe -k ..\35MSSharedLib1024.snk</Command>
@@ -196,7 +196,6 @@
     <ClInclude Include="Rules.h" />
     <ClInclude Include="YaraContext.h" />
     <ClInclude Include="Scanner.h" />
-    <ClInclude Include="YaraThreadContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -210,12 +209,12 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\Microsoft.O365.Security.Native.Libyara.1.0.1\build\native\Microsoft.O365.Security.Native.Libyara.targets" Condition="Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.1\build\native\Microsoft.O365.Security.Native.Libyara.targets')" />
+    <Import Project="..\packages\Microsoft.O365.Security.Native.Libyara.1.0.3\build\native\Microsoft.O365.Security.Native.Libyara.targets" Condition="Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.3\build\native\Microsoft.O365.Security.Native.Libyara.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.1\build\native\Microsoft.O365.Security.Native.Libyara.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.O365.Security.Native.Libyara.1.0.1\build\native\Microsoft.O365.Security.Native.Libyara.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.3\build\native\Microsoft.O365.Security.Native.Libyara.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.O365.Security.Native.Libyara.1.0.3\build\native\Microsoft.O365.Security.Native.Libyara.targets'))" />
   </Target>
 </Project>

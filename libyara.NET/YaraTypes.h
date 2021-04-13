@@ -10,9 +10,10 @@ namespace libyaraNET {
     // YR_CALLBACK_FUNC
     [UnmanagedFunctionPointer(CallingConvention::Cdecl)]
     delegate int YaraScanCallback(
+        YR_SCAN_CONTEXT* context,
         int message,
-        void* data,
-        void* context);
+        void* message_data,
+        void* user_data);
 
     // YR_COMPILER_CALLBACK_FUNC
     [UnmanagedFunctionPointer(CallingConvention::Cdecl)]
@@ -20,6 +21,7 @@ namespace libyaraNET {
         int errorLevel,
         const char* fileName,
         int lineNumber,
+        const YR_RULE* rule,
         const char* message,
         void* userData);
 
