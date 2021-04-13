@@ -38,9 +38,6 @@
     <ClInclude Include="Match.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="YaraThreadContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Rule.h">
       <Filter>Header Files</Filter>
     </ClInclude>

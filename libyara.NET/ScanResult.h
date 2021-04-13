@@ -42,8 +42,9 @@ namespace libyaraNET {
             yr_rule_strings_foreach(matchingRule, string)
             {
                 auto identifier = marshal_as<String^>(string->identifier);
+                YR_SCAN_CONTEXT* context = nullptr;
 
-                yr_string_matches_foreach(string, match)
+                yr_string_matches_foreach(context, string, match)
                 {
                     if (!Matches->ContainsKey(identifier))
                         Matches->Add(identifier, gcnew List<Match^>());

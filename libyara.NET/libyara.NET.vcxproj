@@ -196,7 +196,6 @@
     <ClInclude Include="Rules.h" />
     <ClInclude Include="YaraContext.h" />
     <ClInclude Include="Scanner.h" />
-    <ClInclude Include="YaraThreadContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />

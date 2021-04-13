@@ -6,7 +6,6 @@
 #include <stdexcept>
 
 #include "YaraContext.h"
-#include "YaraThreadContext.h"
 #include "YaraTypes.h"
 #include "Exceptions.h"
 
