@@ -2,16 +2,16 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET.Core</id>
-    <version>4.0.2</version>
+    <version>4.0.3</version>
     <authors>Microsoft</authors>
     <licenseUrl>https://github.com/Microsoft/libyara.NET/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <title>Microsoft.O365.Security.Native.libyara.NET.Core</title>
     <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Only targeted for 64-bit .NET Core build project.</description>
-    <releaseNotes>Support split of YR_RULES into YR_RULE list</releaseNotes>
+    <releaseNotes>Update to YARA 4.0.2</releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-    <tags>yara libyara .NET.Core virustotal managed 4.0.2 net46</tags>
+    <tags>yara libyara virustotal</tags>
   </metadata>
   <files>
     <file src="x64\Release\*.dll" target="lib\net46\" />
