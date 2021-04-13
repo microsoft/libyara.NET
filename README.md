@@ -1,7 +1,7 @@
 # libyara.NET
 A .NET wrapper for libyara that provides a simplified API for developing tools in C# and PowerShell. This library targets .NET 4.6.
 
-This library is built against the [Microsoft.O365.Security.Native.Libyara](https://www.nuget.org/packages/Microsoft.O365.Security.Native.Libyara/) package which is based on VirusTotal's [yara](https://github.com/VirusTotal/yara/) built with [vcpkg](https://github.com/Microsoft/vcpkg/). This library is currently based on commit `e3439e4ead4ed5d3b75a0b46eaf15ddda2110bb9` of [yara](https://github.com/VirusTotal/yara/tree/e3439e4ead4ed5d3b75a0b46eaf15ddda2110bb9/). We will update [yara](https://github.com/VirusTotal/yara/) version to include the latest features and bug fixes if necessary.
+This library is built against the [Microsoft.O365.Security.Native.Libyara](https://www.nuget.org/packages/Microsoft.O365.Security.Native.Libyara/) package which is based on VirusTotal's [yara](https://github.com/VirusTotal/yara/) built with [vcpkg](https://github.com/Microsoft/vcpkg/). This library is currently based on yara 4.0.2 per the [vcpkg port](https://github.com/microsoft/vcpkg/tree/master/ports/yara). We will update [yara](https://github.com/VirusTotal/yara/) version to include the latest features and bug fixes if necessary.
 
 This library is avaiable in forms of two NuGet packages, depending on your project types:
 
@@ -49,7 +49,7 @@ For .NET Core projects, only x64 binary version is avaiable on NuGet with the pa
 
 
 ## Reference
-See the [libyara C API documentation](http://yara.readthedocs.io/en/v3.5.0/capi.html) for a general overview on how to use libyara. This API is adapted to present an API that is more consistent with .NET so usage differs slightly, but the core concepts remain the same.
+See the [libyara C API documentation](https://yara.readthedocs.io/en/v4.0.2/capi.html) for a general overview on how to use libyara. This API is adapted to present an API that is more consistent with .NET so usage differs slightly, but the core concepts remain the same.
 
 **TODO: API Reference**
 
