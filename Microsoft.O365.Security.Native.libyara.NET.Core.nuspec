@@ -2,14 +2,18 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET.Core</id>
-    <version>4.0.3</version>
+    <version>4.0.4</version>
     <authors>Microsoft</authors>
     <licenseUrl>https://github.com/Microsoft/libyara.NET/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <title>Microsoft.O365.Security.Native.libyara.NET.Core</title>
     <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Only targeted for 64-bit .NET Core build project.</description>
-    <releaseNotes>Update to YARA 4.0.2</releaseNotes>
+    <releaseNotes>
+      - Update platform toolset to v142.
+      - Update Windows SDK reference to 10.0
+      - Enable Spectre mitigation
+    </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>yara libyara virustotal</tags>
   </metadata>
