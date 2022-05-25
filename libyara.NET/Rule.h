@@ -46,7 +46,6 @@ namespace libyaraNET {
 
             yr_rule_metas_foreach(rule, meta)
             {
-                // Meta fields have two main strings. The name ("identifier"), and what it's equal to ("string").
                 Meta^ storeme =
                     gcnew Meta(
                         marshal_as<String^>(meta->identifier),

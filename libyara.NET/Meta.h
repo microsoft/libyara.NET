@@ -12,9 +12,6 @@ namespace libyaraNET {
         property String^ Identifier;
         property String^ Value;
 
-        /// <summary>
-        /// Create an empty match. Useful for testing.
-        /// </summary>
         Meta()
         {
             Identifier = nullptr;
