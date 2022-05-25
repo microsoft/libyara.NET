@@ -192,6 +192,7 @@
     <ClInclude Include="Exceptions.h" />
     <ClInclude Include="FileWrapper.h" />
     <ClInclude Include="GCHandleWrapper.h" />
+    <ClInclude Include="Meta.h" />
     <ClInclude Include="QuickScan.h" />
     <ClInclude Include="ScanResult.h" />
     <ClInclude Include="YaraTypes.h" />

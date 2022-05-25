@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using libyaraNET;
+using System;
 
 namespace Tests
 {
@@ -48,6 +49,19 @@ namespace Tests
                 Assert.AreEqual(1, rules[0].Tags.Count);
                 Assert.AreEqual("ExampleRule2", rules[1].Identifier);
                 Assert.AreEqual(2, rules[1].Tags.Count);
+            }
+        }
+
+        [TestMethod]
+        public void it_should_iterate_meta_fields()
+        {
+            using (var ruleset = GetRuleSet(".\\Content\\BasicRule.yara"))
+            {
+                var rules = ruleset.GetRules();
+
+                Assert.AreEqual(1, rules[0].Metas.Count);
+                Assert.AreEqual("description", rules[0].Metas[0].Identifier);
+                Assert.AreEqual("This is a meta field", rules[0].Metas[0].Value);
             }
         }
 
