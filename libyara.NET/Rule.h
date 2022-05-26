@@ -42,15 +42,15 @@ namespace libyaraNET {
                 Tags->Add(marshal_as<String^>(tag));
             }
 
-            const YR_META* meta = nullptr;
+            const YR_META* metaPtr = nullptr;
 
-            yr_rule_metas_foreach(rule, meta)
+            yr_rule_metas_foreach(rule, metaPtr)
             {
-                Meta^ storeme =
+                Meta^ meta =
                     gcnew Meta(
-                        marshal_as<String^>(meta->identifier),
-                        marshal_as<String^>(meta->string));
-                Metas->Add(storeme);
+                        marshal_as<String^>(metaPtr->identifier),
+                        marshal_as<String^>(metaPtr->string));
+                Metas->Add(meta);
             }
         }
     };
