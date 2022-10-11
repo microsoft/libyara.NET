@@ -89,6 +89,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\菜单模块.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\HelloWorld.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
