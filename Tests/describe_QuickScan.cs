@@ -11,12 +11,23 @@ namespace Tests
     {
         readonly string rulesPath = ".\\Content\\BasicRule.yara";
         readonly string testPath = ".\\Content\\HelloWorld.txt";
-
+        readonly string unicodeTestPath = ".\\Content\\菜单模块.txt";
 
         [TestMethod]
         public void it_should_scan_files()
         {
             var results = QuickScan.File(testPath, rulesPath);
+
+            Assert.AreEqual(1, results.Count);
+            Assert.AreEqual(1, results[0].Matches.Count);
+            Assert.AreEqual(2, results[0].Matches["$hw"].Count);
+            Assert.AreEqual(0x1eUL, results[0].Matches["$hw"][0].Offset);
+        }
+
+        [TestMethod]
+        public void it_should_scan_files_with_unicode_filenames()
+        {
+            var results = QuickScan.File(unicodeTestPath, rulesPath);
 
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(1, results[0].Matches.Count);

@@ -72,13 +72,21 @@ namespace libyaraNET {
                 throw gcnew FileNotFoundException(path);
 
             auto results = gcnew List<ScanResult^>();
-            auto nativePath = marshal_as<std::string>(path);
+            auto nativePath = marshal_as<std::wstring>(path);
+            auto fd = CreateFile(nativePath.c_str(),
+                GENERIC_READ,
+                FILE_SHARE_READ,
+                NULL,
+                OPEN_EXISTING,
+                0,
+                NULL);
+
             GCHandleWrapper resultsHandle(results);
 
             ErrorUtility::ThrowOnError(
-                yr_rules_scan_file(
+                yr_rules_scan_fd(
                     rules,
-                    nativePath.c_str(),
+                    fd,
                     (int)flags,
                     callbackPtr,
                     resultsHandle.GetPointer(),
