@@ -10,7 +10,7 @@
     <title>Microsoft.O365.Security.Native.libyara.NET.Core</title>
     <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Only targeted for 64-bit .NET Core build project.</description>
     <releaseNotes>
-      - Fix issue preventing file paths with unicode cahracters from being scanned
+      - Fix issue preventing file paths with unicode characters from being scanned
     </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>yara libyara virustotal</tags>
