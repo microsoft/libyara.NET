@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.Libyara</id>
-    <version>1.0.4</version>
+    <version>1.1.0</version>
     <authors>Microsoft</authors>
     <licenseUrl>https://github.com/Microsoft/libyara.NET/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Microsoft/libyara.NET</projectUrl>
@@ -10,9 +10,16 @@
     <title>Microsoft.O365.Security.Native.Libyara</title>
     <description>VirusTotal's libyara native nuget package built with vcpkg. This nuget package is a dependency of libyara.NET project.</description>
     <summary>x86 and x64 binary versions are available for Windows in this package. Projects that use this package should use 'x86' or 'Win32' as the platform name to select the x86 binaries and use 'x64' to select the x64 binaries.</summary>
-    <releaseNotes>Update YARA to 4.2.3</releaseNotes>
+    <releaseNotes>
+      Version 1.1.0
+        - Add support for .NET 6.0
+    </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>native libyara vcpkg odspsecurity</tags>
+    <dependencies>
+        <group targetFramework=".NETFramework4.6.2" />
+        <group targetFramework="net6.0" />
+    </dependencies>
   </metadata>
   <files>
     <file src="vcpkg\installed\x64-windows-static\include\**" target="lib\native\include" />

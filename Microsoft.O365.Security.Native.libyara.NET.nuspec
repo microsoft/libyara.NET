@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET</id>
-    <version>4.2.1</version>
+    <version>4.3.0</version>
     <authors>Microsoft</authors>
     <licenseUrl>https://github.com/Microsoft/libyara.NET/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
@@ -10,22 +10,20 @@
     <title>Microsoft.O365.Security.Native.libyara.NET</title>
     <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Support both 32-bit and 64-bit of .NET framework 4.6</description>
     <releaseNotes>
-      - Fix issue preventing file paths with unicode characters from being scanned
+      - Add support for .Net 6.0
     </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>yara libyara virustotal</tags>
   </metadata>
   <files>
     <!-- Runtime libraries for x86 -->
-    <file src="Release\*.dll" target="build\x86" />
-    <file src="Release\*.pdb" target="build\x86" />
-    <file src="Release\*.xml" target="build\x86" />
+    <file src="Win32\Release\net462\libyara.NET.pdb" target="build\x86\libyara.NET.pdb" />
+    <file src="Win32\Release\net462\libyara.NET.dll" target="build\x86\libyara.NET.dll" />
+    <file src="Win32\Release\net462\libyara.NET.xml" target="build\x86\libyara.NET.xml" />
 
     <!-- Runtime libraries for x64 -->
-    <file src="x64\Release\*.dll" target="build\x64" />
-    <file src="x64\Release\*.pdb" target="build\x64" />
-    <file src="x64\Release\*.xml" target="build\x64" />
-
-    <file src="Microsoft.O365.Security.Native.libyara.NET.props" target="build\net46\" />
+    <file src="x64\Release\net462\libyara.NET.dll" target="build\x64\libyara.NET.dll" />
+    <file src="x64\Release\net462\libyara.NET.pdb" target="build\x64\libyara.NET.pdb" />
+    <file src="x64\Release\net462\libyara.NET.xml" target="build\x64\libyara.NET.xml" />
   </files>
 </package>
