@@ -9,41 +9,41 @@ namespace Tests
     [TestClass]
     public class describe_Compiler
     {
-        private Compiler compiler;
-        private YaraContext ctx;
+        private Compiler _compiler;
+        private YaraContext _ctx;
 
         [TestInitialize]
         public void before_each()
         {
-            ctx = new YaraContext();
-            compiler = new Compiler();
+            _ctx = new YaraContext();
+            _compiler = new Compiler();
         }
 
         [TestCleanup]
         public void after_each()
         {
-            ctx.Dispose();
+            _ctx.Dispose();
         }
 
         [TestMethod]
         [ExpectedException(typeof(CompilationException))]
         public void given_invalid_rule_add_rule_string_should_throw()
         {
-            compiler.AddRuleString("invalid rule");
+            _compiler.AddRuleString("invalid rule");
         }
 
         [TestMethod]
         [ExpectedException(typeof(Win32Exception))]
         public void given_missing_rule_file_add_rule_file_should_throw()
         {
-            compiler.AddRuleFile("c:\\notfound.txt");
+            _compiler.AddRuleFile("c:\\notfound.txt");
         }
 
         [TestMethod]
         [ExpectedException(typeof(CompilationException))]
         public void given_invalid_rule_file_add_rule_file_should_throw()
         {
-            compiler.AddRuleFile(".\\Content\\InvalidRule.yara");
+            _compiler.AddRuleFile(".\\Content\\InvalidRule.yara");
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace Tests
         {
             try
             {
-                compiler.AddRuleString("rule test { bad }");
+                _compiler.AddRuleString("rule test { bad }");
             }
             catch (CompilationException cex)
             {
@@ -71,13 +71,13 @@ namespace Tests
             // there was a breaking change that caused libyara to be compiled
             // without cuckoo or hash module support, this is to catch that
 
-            compiler.AddRuleString("import \"hash\" rule test { condition: hash.md5(0, 100) == \"abc\"}");
+            _compiler.AddRuleString("import \"hash\" rule test { condition: hash.md5(0, 100) == \"abc\"}");
         }
 
         [TestMethod]
         public void given_file_of_combined_rules_it_should_compile()
         {
-            compiler.AddRuleFile(".\\Content\\CombinedRules.yara");
+            _compiler.AddRuleFile(".\\Content\\CombinedRules.yara");
         }
     }
 }

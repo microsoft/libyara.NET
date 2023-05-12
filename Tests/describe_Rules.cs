@@ -7,20 +7,20 @@ namespace Tests
     [TestClass]
     public class describe_Rules
     {
-        private Compiler compiler;
-        private YaraContext ctx;
+        private Compiler _compiler;
+        private YaraContext _ctx;
 
         [TestInitialize]
         public void before_each()
         {
-            ctx = new YaraContext();
-            compiler = new Compiler();
+            _ctx = new YaraContext();
+            _compiler = new Compiler();
         }
 
         [TestCleanup]
         public void after_each()
         {
-            ctx.Dispose();
+            _ctx.Dispose();
         }
 
         [TestMethod]
@@ -66,8 +66,8 @@ namespace Tests
 
         private Rules GetRuleSet(string rulePath)
         {
-            compiler.AddRuleFile(rulePath);
-            return compiler.GetRules();
+            _compiler.AddRuleFile(rulePath);
+            return _compiler.GetRules();
         }
     }
 }
