@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{347CBFF6-30D8-40FB-AE4E-8F1508117A38}</ProjectGuid>
+    <ProjectGuid>{347CBFF6-30D8-40FB-AE4E-8F1508117A39}</ProjectGuid>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>libyaraNET</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\net462\</OutDir>
-    <CLRSupport>true</CLRSupport>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <CLRSupport>NetCore</CLRSupport>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(TargetFramework)\</OutDir>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup>
@@ -82,34 +82,29 @@
   </ItemDefinitionGroup>
 
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <ClInclude Include="..\libyara.NET\Compiler.h" />
+    <ClInclude Include="..\libyara.NET\Exceptions.h" />
+    <ClInclude Include="..\libyara.NET\FileWrapper.h" />
+    <ClInclude Include="..\libyara.NET\GCHandleWrapper.h" />
+    <ClInclude Include="..\libyara.NET\Meta.h" />
+    <ClInclude Include="..\libyara.NET\QuickScan.h" />
+    <ClInclude Include="..\libyara.NET\ScanResult.h" />
+    <ClInclude Include="..\libyara.NET\YaraTypes.h" />
+    <ClInclude Include="..\libyara.NET\Match.h" />
+    <ClInclude Include="..\libyara.NET\Rule.h" />
+    <ClInclude Include="..\libyara.NET\Rules.h" />
+    <ClInclude Include="..\libyara.NET\YaraContext.h" />
+    <ClInclude Include="..\libyara.NET\Scanner.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Compiler.h" />
-    <ClInclude Include="Exceptions.h" />
-    <ClInclude Include="FileWrapper.h" />
-    <ClInclude Include="GCHandleWrapper.h" />
-    <ClInclude Include="Meta.h" />
-    <ClInclude Include="QuickScan.h" />
-    <ClInclude Include="ScanResult.h" />
-    <ClInclude Include="YaraTypes.h" />
-    <ClInclude Include="Match.h" />
-    <ClInclude Include="Rule.h" />
-    <ClInclude Include="Rules.h" />
-    <ClInclude Include="YaraContext.h" />
-    <ClInclude Include="Scanner.h" />
+    <ClCompile Include="..\libyara.NET\AssemblyInfo.cpp" />
+    <ClCompile Include="..\libyara.NET\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <Text Include="..\libyara.NET\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="..\libyara.NET\packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

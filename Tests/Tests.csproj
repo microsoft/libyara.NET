@@ -1,10 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <TargetFrameworks>net462;net6.0</TargetFrameworks>
+    <Platforms>x64;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -36,7 +34,11 @@
     </Content>
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+    <ProjectReference Include="..\libyara.NET.Core\libyara.NET.Core.vcxproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
     <ProjectReference Include="..\libyara.NET\libyara.NET.vcxproj" />
   </ItemGroup>
 

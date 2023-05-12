@@ -1,15 +1,14 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using libyaraNET;
 
-using libyaraNET;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
     [TestClass]
     public class describe_Rules
     {
-        Compiler compiler;
-        YaraContext ctx;
+        private Compiler compiler;
+        private YaraContext ctx;
 
         [TestInitialize]
         public void before_each()

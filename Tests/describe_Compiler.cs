@@ -1,16 +1,16 @@
-﻿using System;
-using System.ComponentModel;
+﻿using libyaraNET;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using libyaraNET;
+using System.ComponentModel;
 
 namespace Tests
 {
     [TestClass]
     public class describe_Compiler
     {
-        Compiler compiler;
-        YaraContext ctx;
+        private Compiler compiler;
+        private YaraContext ctx;
 
         [TestInitialize]
         public void before_each()
