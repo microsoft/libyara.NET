@@ -81,6 +81,9 @@ namespace libyaraNET {
                 0,
                 NULL);
 
+            if (fd == INVALID_HANDLE_VALUE)
+                throw gcnew FileNotFoundException(path);
+
             GCHandleWrapper resultsHandle(results);
 
             ErrorUtility::ThrowOnError(
