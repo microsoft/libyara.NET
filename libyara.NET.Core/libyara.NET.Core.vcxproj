@@ -22,6 +22,7 @@
     <ProjectGuid>{347CBFF6-30D8-40FB-AE4E-8F1508117A39}</ProjectGuid>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>libyaraNET</RootNamespace>
+    <AssemblyName>libyara.NET</AssemblyName>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <CLRSupport>NetCore</CLRSupport>
     <TargetFramework>net6.0</TargetFramework>

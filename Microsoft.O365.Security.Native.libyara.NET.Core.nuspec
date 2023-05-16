@@ -2,9 +2,9 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET.Core</id>
-    <version>4.3.0</version>
+    <version>4.2.1.1</version>
     <authors>Microsoft</authors>
-    <licenseUrl>https://github.com/Microsoft/libyara.NET/blob/master/LICENSE</licenseUrl>
+    <license type="expression">BSD-3-Clause</license>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <title>Microsoft.O365.Security.Native.libyara.NET.Core</title>
@@ -14,11 +14,19 @@
     </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>yara libyara virustotal</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2" />
+      <group targetFramework="net6.0" />
+    </dependencies>
   </metadata>
   <files>
-    <file src="x64\Release\net6.0\libyara.NET.Core.dll" target="lib\net6.0\libyara.NET.Core.dll" />
-    <file src="x64\Release\net6.0\libyara.NET.Core.pdb" target="lib\net6.0\libyara.NET.Core.pdb" />
-    <file src="x64\Release\net6.0\libyara.NET.Core.xml" target="lib\net6.0\libyara.NET.Core.xml" />
+    <file src="x64\Release\net462\libyara.NET.dll" target="lib\net462\libyara.NET.dll" />
+    <file src="x64\Release\net462\libyara.NET.pdb" target="lib\net462\libyara.NET.pdb" />
+    <file src="x64\Release\net462\libyara.NET.xml" target="lib\net462\libyara.NET.xml" />
+
+    <file src="x64\Release\net6.0\libyara.NET.dll" target="lib\net6.0\libyara.NET.dll" />
+    <file src="x64\Release\net6.0\libyara.NET.pdb" target="lib\net6.0\libyara.NET.pdb" />
+    <file src="x64\Release\net6.0\libyara.NET.xml" target="lib\net6.0\libyara.NET.xml" />
 
     <file src="x64\Release\net6.0\Ijwhost.dll" target="runtimes\win-x64\native\Ijwhost.dll" />
   </files>
