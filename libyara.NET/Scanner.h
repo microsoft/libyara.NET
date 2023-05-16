@@ -92,6 +92,8 @@ namespace libyaraNET {
                     resultsHandle.GetPointer(),
                     TimeoutSeconds));
 
+            CloseHandle(fd);
+
             return results;
         }
 
