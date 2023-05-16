@@ -1,5 +1,7 @@
 ﻿using libyaraNET;
 
+using System;
+
 namespace TestApp
 {
     class Program
@@ -21,6 +23,7 @@ namespace TestApp
 
                 try
                 {
+                    Console.WriteLine("Compiling rules in HelloWorldRules.yara");
                     // Rules and Compiler objects must be disposed.
                     using (var compiler = new Compiler())
                     {
@@ -30,7 +33,10 @@ namespace TestApp
 
                     // Scanner and ScanResults do not need to be disposed.
                     var scanner = new Scanner();
+                    Console.WriteLine("Scanning file: SampleFile.txt");
                     var results = scanner.ScanFile(".\\SampleFile.txt", rules);
+                    var found = results.Count > 0 ? "yes" : "no";
+                    Console.WriteLine($"Matches found as a result of the scan: {found}");
                 }
                 finally
                 {

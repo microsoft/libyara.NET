@@ -7,7 +7,6 @@
 #include "Exceptions.h"
 #include "Rules.h"
 #include "YaraTypes.h"
-
 #include <yara.h>
 
 using namespace System;
@@ -138,6 +137,7 @@ namespace libyaraNET {
             void* userData)
         {
             UNREFERENCED_PARAMETER(errorLevel);
+            UNREFERENCED_PARAMETER(rule);
             UNREFERENCED_PARAMETER(userData);
 
             auto msg = String::Format("{0} on line {1} in file: {2}",

@@ -2,9 +2,9 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET</id>
-    <version>4.2.1</version>
+    <version>4.2.1.1</version>
     <authors>Microsoft</authors>
-    <licenseUrl>https://github.com/Microsoft/libyara.NET/blob/master/LICENSE</licenseUrl>
+    <license type="expression">BSD-3-Clause</license>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <title>Microsoft.O365.Security.Native.libyara.NET</title>
@@ -14,17 +14,20 @@
     </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>yara libyara virustotal</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2" />
+    </dependencies>
   </metadata>
   <files>
     <!-- Runtime libraries for x86 -->
-    <file src="Release\*.dll" target="build\x86" />
-    <file src="Release\*.pdb" target="build\x86" />
-    <file src="Release\*.xml" target="build\x86" />
+    <file src="Win32\Release\net462\libyara.NET.pdb" target="build\x86\libyara.NET.pdb" />
+    <file src="Win32\Release\net462\libyara.NET.dll" target="build\x86\libyara.NET.dll" />
+    <file src="Win32\Release\net462\libyara.NET.xml" target="build\x86\libyara.NET.xml" />
 
     <!-- Runtime libraries for x64 -->
-    <file src="x64\Release\*.dll" target="build\x64" />
-    <file src="x64\Release\*.pdb" target="build\x64" />
-    <file src="x64\Release\*.xml" target="build\x64" />
+    <file src="x64\Release\net462\libyara.NET.dll" target="build\x64\libyara.NET.dll" />
+    <file src="x64\Release\net462\libyara.NET.pdb" target="build\x64\libyara.NET.pdb" />
+    <file src="x64\Release\net462\libyara.NET.xml" target="build\x64\libyara.NET.xml" />
 
     <file src="Microsoft.O365.Security.Native.libyara.NET.props" target="build\net46\" />
   </files>

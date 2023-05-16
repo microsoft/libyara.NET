@@ -1,22 +1,22 @@
-﻿using System;
-using System.Text;
+﻿using libyaraNET;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using libyaraNET;
+using System.Text;
 
 namespace Tests
 {
     [TestClass]
     public class describe_QuickScan
     {
-        readonly string rulesPath = ".\\Content\\BasicRule.yara";
-        readonly string testPath = ".\\Content\\HelloWorld.txt";
-        readonly string unicodeTestPath = ".\\Content\\菜单模块.txt";
+        private readonly string _rulesPath = ".\\Content\\BasicRule.yara";
+        private readonly string _testPath = ".\\Content\\HelloWorld.txt";
+        private readonly string _unicodeTestPath = ".\\Content\\菜单模块.txt";
 
         [TestMethod]
         public void it_should_scan_files()
         {
-            var results = QuickScan.File(testPath, rulesPath);
+            var results = QuickScan.File(_testPath, _rulesPath);
 
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(1, results[0].Matches.Count);
@@ -27,7 +27,7 @@ namespace Tests
         [TestMethod]
         public void it_should_scan_files_with_unicode_filenames()
         {
-            var results = QuickScan.File(unicodeTestPath, rulesPath);
+            var results = QuickScan.File(_unicodeTestPath, _rulesPath);
 
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(1, results[0].Matches.Count);
@@ -41,7 +41,7 @@ namespace Tests
             var str = "hello world ! hello world";
             var data = Encoding.ASCII.GetBytes(str);
 
-            var results = QuickScan.Memory(data, rulesPath);
+            var results = QuickScan.Memory(data, _rulesPath);
 
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(1, results[0].Matches.Count);
@@ -55,7 +55,7 @@ namespace Tests
             var str = "hello world ! hello world";
             var data = Encoding.ASCII.GetBytes(str);
 
-            var results = QuickScan.Memory(data, rulesPath, ScanFlags.Fast);
+            var results = QuickScan.Memory(data, _rulesPath, ScanFlags.Fast);
 
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(1, results[0].Matches.Count);
