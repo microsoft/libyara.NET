@@ -13,7 +13,7 @@
       <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <Link Condition="'$(Platform)' == 'x86' Or '$(Platform)' == 'Win32'">
-      <AdditionalDependencies>ibcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
 	<Link Condition="'$(Platform)' == 'x64'">
