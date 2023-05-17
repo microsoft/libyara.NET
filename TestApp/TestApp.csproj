@@ -4,8 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net462;net6.0</TargetFrameworks>
     <Platforms>x64;x86</Platforms>
-    <RuntimeIdentifier Condition=" '$(Platform)' == 'x64' ">win-x64</RuntimeIdentifier>
-    <RuntimeIdentifier Condition=" '$(Platform)' == 'x86' ">win-x86</RuntimeIdentifier>
+    <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
