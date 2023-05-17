@@ -65,6 +65,9 @@
     <ClInclude Include="..\libyara.NET\Meta.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\libyara.NET\FileHandleWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\libyara.NET\packages.config" />

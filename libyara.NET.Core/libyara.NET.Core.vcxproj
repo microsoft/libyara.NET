@@ -95,6 +95,7 @@
     <ClInclude Include="..\libyara.NET\Rule.h" />
     <ClInclude Include="..\libyara.NET\Rules.h" />
     <ClInclude Include="..\libyara.NET\YaraContext.h" />
+    <ClInclude Include="..\libyara.NET\FileHandleWrapper.h" />
     <ClInclude Include="..\libyara.NET\Scanner.h" />
   </ItemGroup>
   <ItemGroup>
@@ -109,12 +110,12 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\Microsoft.O365.Security.Native.Libyara.1.0.4\build\native\Microsoft.O365.Security.Native.Libyara.targets" Condition="Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.4\build\native\Microsoft.O365.Security.Native.Libyara.targets')" />
+    <Import Project="..\packages\Microsoft.O365.Security.Native.Libyara.1.0.5\build\native\Microsoft.O365.Security.Native.Libyara.targets" Condition="Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.5\build\native\Microsoft.O365.Security.Native.Libyara.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.4\build\native\Microsoft.O365.Security.Native.Libyara.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.O365.Security.Native.Libyara.1.0.4\build\native\Microsoft.O365.Security.Native.Libyara.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.5\build\native\Microsoft.O365.Security.Native.Libyara.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.O365.Security.Native.Libyara.1.0.5\build\native\Microsoft.O365.Security.Native.Libyara.targets'))" />
   </Target>
 </Project>
