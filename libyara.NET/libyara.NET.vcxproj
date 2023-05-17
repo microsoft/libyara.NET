@@ -99,6 +99,7 @@
     <ClInclude Include="Rule.h" />
     <ClInclude Include="Rules.h" />
     <ClInclude Include="YaraContext.h" />
+    <ClInclude Include="FileHandleWrapper.h" />
     <ClInclude Include="Scanner.h" />
   </ItemGroup>
   <ItemGroup>

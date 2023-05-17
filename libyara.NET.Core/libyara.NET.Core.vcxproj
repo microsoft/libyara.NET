@@ -95,6 +95,7 @@
     <ClInclude Include="..\libyara.NET\Rule.h" />
     <ClInclude Include="..\libyara.NET\Rules.h" />
     <ClInclude Include="..\libyara.NET\YaraContext.h" />
+    <ClInclude Include="..\libyara.NET\FileHandleWrapper.h" />
     <ClInclude Include="..\libyara.NET\Scanner.h" />
   </ItemGroup>
   <ItemGroup>
