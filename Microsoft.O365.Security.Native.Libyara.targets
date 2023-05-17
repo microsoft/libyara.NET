@@ -5,19 +5,19 @@
       <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Lib Condition="'$(Platform)' == 'x86' Or '$(Platform)' == 'Win32'">
-      <AdditionalDependencies>jansson.lib;libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
 	<Lib Condition="'$(Platform)' == 'x64'">
-      <AdditionalDependencies>jansson.lib;libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <Link Condition="'$(Platform)' == 'x86' Or '$(Platform)' == 'Win32'">
-      <AdditionalDependencies>jansson.lib;libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
 	<Link Condition="'$(Platform)' == 'x64'">
-      <AdditionalDependencies>jansson.lib;libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
