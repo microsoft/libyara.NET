@@ -3,7 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>net462;net6.0</TargetFrameworks>
     <Platforms>x64;x86</Platforms>
-    <RuntimeIdentifier>win-$(Platform)</RuntimeIdentifier>
+    <RuntimeIdentifier Condition=" '$(Platform)' == 'x64' ">win-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition=" '$(Platform)' == 'x86' ">win-x86</RuntimeIdentifier>
   </PropertyGroup>
 
   <ItemGroup>
