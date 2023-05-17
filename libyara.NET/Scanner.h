@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Exceptions.h"
+#include "FileHandleWrapper.h"
 #include "GCHandleWrapper.h"
 #include "Rules.h"
 #include "ScanResult.h"
@@ -73,13 +74,16 @@ namespace libyaraNET {
 
             auto results = gcnew List<ScanResult^>();
             auto nativePath = marshal_as<std::wstring>(path);
-            auto fd = CreateFile(nativePath.c_str(),
+            file_handle fd(nativePath.c_str(),
                 GENERIC_READ,
                 FILE_SHARE_READ,
-                NULL,
+                (LPSECURITY_ATTRIBUTES)NULL,
                 OPEN_EXISTING,
                 0,
-                NULL);
+                (HANDLE)NULL);
+
+            if (fd.is_invalid())
+                throw gcnew FileNotFoundException(path);
 
             GCHandleWrapper resultsHandle(results);
 
