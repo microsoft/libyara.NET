@@ -1,7 +1,7 @@
 # libyara.NET
 A .NET wrapper for libyara that provides a simplified API for developing tools in C# and PowerShell. This library targets .NET 4.6.
 
-This library is built against the [Microsoft.O365.Security.Native.Libyara](https://www.nuget.org/packages/Microsoft.O365.Security.Native.Libyara/) package which is based on VirusTotal's [yara](https://github.com/VirusTotal/yara/) built with [vcpkg](https://github.com/Microsoft/vcpkg/). This library is currently based on yara 4.3.0 per the [vcpkg port](https://github.com/microsoft/vcpkg/tree/master/ports/yara). We will update [yara](https://github.com/VirusTotal/yara/) version to include the latest features and bug fixes if necessary.
+This library is built against the [Microsoft.O365.Security.Native.Libyara](https://www.nuget.org/packages/Microsoft.O365.Security.Native.Libyara/) package which is based on VirusTotal's [yara](https://github.com/VirusTotal/yara/) built with [vcpkg](https://github.com/Microsoft/vcpkg/). This library is currently based on yara 4.2.3 per the [vcpkg port](https://github.com/microsoft/vcpkg/tree/master/ports/yara). We will update [yara](https://github.com/VirusTotal/yara/) version to include the latest features and bug fixes if necessary.
 
 This library is avaiable in forms of two NuGet packages, depending on your project types:
 
