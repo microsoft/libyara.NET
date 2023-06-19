@@ -93,6 +93,63 @@ namespace libyaraNET {
         }
 
         /// <summary>
+        /// Add external variable (integer).
+        /// </summary>
+        void AddExternalVarInteger(String^ identifier, uint64_t value)
+        {
+            auto identifierStr = marshal_as<std::string>(identifier);
+
+            yr_compiler_define_integer_variable(
+                compiler,
+                identifierStr.c_str(),
+                value
+            );
+        }
+
+        /// <summary>
+        /// Add external variable (float).
+        /// </summary>
+        void AddExternalVarFloat(String^ identifier, double value)
+        {
+            auto identifierStr = marshal_as<std::string>(identifier);
+
+            yr_compiler_define_float_variable(
+                compiler,
+                identifierStr.c_str(),
+                value
+            );
+        }
+
+        /// <summary>
+        /// Add external variable (boolean).
+        /// </summary>
+        void AddExternalVarBoolean(String^ identifier, bool value)
+        {
+            auto identifierStr = marshal_as<std::string>(identifier);
+
+            yr_compiler_define_boolean_variable(
+                compiler,
+                identifierStr.c_str(),
+                value ? (int)1 : (int)0
+            );
+        }
+
+        /// <summary>
+        /// Add external variable (string).
+        /// </summary>
+        void AddExternalVarString(String^ identifier, String^ value)
+        {
+            auto identifierStr = marshal_as<std::string>(identifier);
+            auto valueStr = marshal_as<std::string>(value);
+
+            yr_compiler_define_string_variable(
+                compiler,
+                identifierStr.c_str(),
+                valueStr.c_str()
+            );
+        }
+
+        /// <summary>
         /// Get the compiled Rules object.
         /// </summary>
         Rules^ GetRules()
