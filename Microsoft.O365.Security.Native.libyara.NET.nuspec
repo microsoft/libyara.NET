@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET</id>
-    <version>4.2.2</version>
+    <version>4.2.3</version>
     <authors>Microsoft</authors>
     <license type="expression">BSD-3-Clause</license>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
@@ -10,8 +10,7 @@
     <title>Microsoft.O365.Security.Native.libyara.NET</title>
     <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Support both 32-bit and 64-bit of .NET framework 4.6</description>
     <releaseNotes>
-      - Update YARA to 4.3.0
-      - Close file handle after scanning
+      - Update YARA to 4.3.2
     </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>yara libyara virustotal</tags>
