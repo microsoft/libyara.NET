@@ -36,20 +36,16 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
   </PropertyGroup>
-
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-
   <PropertyGroup>
     <LinkIncremental>false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)'=='Debug'">true</LinkIncremental>
     <LinkKeyFile>$(SolutionDir)35MSSharedLib1024.snk</LinkKeyFile>
     <LinkDelaySign>true</LinkDelaySign>
   </PropertyGroup>
-
   <ItemDefinitionGroup>
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
@@ -67,20 +63,17 @@
       <Message>Verify snk file is generated</Message>
     </PreBuildEvent>
   </ItemDefinitionGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
     <ClCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
-
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -114,12 +107,12 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\Microsoft.O365.Security.Native.Libyara.1.0.4\build\native\Microsoft.O365.Security.Native.Libyara.targets" Condition="Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.4\build\native\Microsoft.O365.Security.Native.Libyara.targets')" />
+    <Import Project="..\packages\Microsoft.O365.Security.Native.Libyara.1.0.7\build\native\Microsoft.O365.Security.Native.Libyara.targets" Condition="Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.7\build\native\Microsoft.O365.Security.Native.Libyara.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.4\build\native\Microsoft.O365.Security.Native.Libyara.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.O365.Security.Native.Libyara.1.0.4\build\native\Microsoft.O365.Security.Native.Libyara.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.O365.Security.Native.Libyara.1.0.7\build\native\Microsoft.O365.Security.Native.Libyara.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.O365.Security.Native.Libyara.1.0.7\build\native\Microsoft.O365.Security.Native.Libyara.targets'))" />
   </Target>
 </Project>

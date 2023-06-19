@@ -10,7 +10,7 @@
     <title>Microsoft.O365.Security.Native.libyara.NET.Core</title>
     <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Only targeted for 64-bit .NET Core build project.</description>
     <releaseNotes>
-      - Revert to yara 4.2.3 due to re-initialization bug with Authenticode parsing
+      - Update yara to 4.3.2
       - Added functions for external variable definition at compile time
     </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
