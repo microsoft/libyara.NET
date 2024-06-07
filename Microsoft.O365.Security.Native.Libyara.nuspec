@@ -1,23 +1,35 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>Microsoft.O365.Security.Native.Libyara</id>
-    <version>1.0.7</version>
+    <version>1.1.0</version>
     <authors>Microsoft</authors>
     <licenseUrl>https://github.com/Microsoft/libyara.NET/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Microsoft/libyara.NET</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <title>Microsoft.O365.Security.Native.Libyara</title>
-    <description>VirusTotal's libyara native nuget package built with vcpkg. This nuget package is a dependency of libyara.NET project.</description>
-    <summary>x86 and x64 binary versions are available for Windows in this package. Projects that use this package should use 'x86' or 'Win32' as the platform name to select the x86 binaries and use 'x64' to select the x64 binaries.</summary>
-    <releaseNotes>Update yara to 4.3.2</releaseNotes>
+    <description>VirusTotal's libyara native nuget package built with vcpkg. This nuget package is a
+      dependency of libyara.NET project.</description>
+    <summary>x86, x64 and ARM64 binary versions are available for Windows in this package. Projects
+      that use this package should use 'x86' or 'Win32' as the platform name to select the x86
+      binaries, use 'x64' to select the x64 binaries and use 'ARM64' to select ARM64 binaries.</summary>
+    <releaseNotes>
+      Version 1.1.0:
+      - Update yara to 4.5.1
+      - Add support for Windows ARM64
+    </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>native libyara vcpkg odspsecurity</tags>
   </metadata>
   <files>
     <file src="vcpkg\installed\x64-windows-static\include\**" target="lib\native\include" />
-    <file src="vcpkg\installed\x64-windows-static\lib\**" exclude="vcpkg\installed\x64-windows-static\lib\pkgconfig\**" target="lib\native\x64\lib" />
-    <file src="vcpkg\installed\x86-windows-static\lib\**" exclude="vcpkg\installed\x86-windows-static\lib\pkgconfig\**" target="lib\native\x86\lib" />
-    <file src="Microsoft.O365.Security.Native.Libyara.targets" target="build\native\Microsoft.O365.Security.Native.Libyara.targets" />
+    <file src="vcpkg\installed\x64-windows-static\lib\**"
+      exclude="vcpkg\installed\x64-windows-static\lib\pkgconfig\**" target="lib\native\x64\lib" />
+    <file src="vcpkg\installed\x86-windows-static\lib\**"
+      exclude="vcpkg\installed\x86-windows-static\lib\pkgconfig\**" target="lib\native\x86\lib" />
+    <file src="vcpkg\installed\arm64-windows-static\lib\**"
+      exclude="vcpkg\installed\arm64-windows-static\lib\pkgconfig\**" target="lib\native\arm64\lib" />
+    <file src="Microsoft.O365.Security.Native.Libyara.targets"
+      target="build\native\Microsoft.O365.Security.Native.Libyara.targets" />
   </files>
 </package>

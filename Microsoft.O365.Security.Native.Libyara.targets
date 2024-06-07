@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+        $(MSBuildThisFileDirectory)..\..\lib\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Lib Condition="'$(Platform)' == 'x86' Or '$(Platform)' == 'Win32'">
       <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>
+        $(MSBuildThisFileDirectory)..\..\lib\native\x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
-	<Lib Condition="'$(Platform)' == 'x64'">
+    <Lib Condition="'$(Platform)' == 'x64'">
       <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>
+        $(MSBuildThisFileDirectory)..\..\lib\native\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <Lib Condition="'$(Platform)' == 'ARM64'">
+      <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+        $(MSBuildThisFileDirectory)..\..\lib\native\ARM64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <Link Condition="'$(Platform)' == 'x86' Or '$(Platform)' == 'Win32'">
       <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>
+        $(MSBuildThisFileDirectory)..\..\lib\native\x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
-	<Link Condition="'$(Platform)' == 'x64'">
+    <Link Condition="'$(Platform)' == 'x64'">
       <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\lib\native\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>
+        $(MSBuildThisFileDirectory)..\..\lib\native\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <Lib Condition="'$(Platform)' == 'ARM64'">
+      <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+        $(MSBuildThisFileDirectory)..\..\lib\native\ARM64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
 </Project>
