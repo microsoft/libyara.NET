@@ -30,10 +30,10 @@
       <AdditionalLibraryDirectories>
         $(MSBuildThisFileDirectory)..\..\lib\native\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
-    <Lib Condition="'$(Platform)' == 'ARM64'">
+    <Link Condition="'$(Platform)' == 'ARM64'">
       <AdditionalDependencies>libcrypto.lib;libyara.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>
         $(MSBuildThisFileDirectory)..\..\lib\native\ARM64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Lib>
+    </Link>
   </ItemDefinitionGroup>
 </Project>
