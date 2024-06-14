@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET.Core</id>
-    <version>4.3.0</version>
+    <version>4.5.1</version>
     <authors>Microsoft</authors>
     <license type="expression">BSD-3-Clause</license>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
