@@ -1,17 +1,18 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET</id>
-    <version>4.2.3</version>
+    <version>4.5.1</version>
     <authors>Microsoft</authors>
     <license type="expression">BSD-3-Clause</license>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <title>Microsoft.O365.Security.Native.libyara.NET</title>
-    <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Support both 32-bit and 64-bit of .NET framework 4.6</description>
+    <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C#
+      or PowerShell tools. Support x86, x64 and ARM64 of .NET framework 4.6.2</description>
     <releaseNotes>
-      - Update yara to 4.3.2
-      - Added functions for external variable definition at compile time
+      - Update yara to 4.5.1
+      - Add support for Windows ARM64
     </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>yara libyara virustotal</tags>
@@ -20,6 +21,8 @@
     </dependencies>
   </metadata>
   <files>
+    <file src="ref\_._" target="lib\net462\_._" />
+
     <!-- Runtime libraries for x86 -->
     <file src="Win32\Release\net462\libyara.NET.pdb" target="build\x86\libyara.NET.pdb" />
     <file src="Win32\Release\net462\libyara.NET.dll" target="build\x86\libyara.NET.dll" />
@@ -30,6 +33,11 @@
     <file src="x64\Release\net462\libyara.NET.pdb" target="build\x64\libyara.NET.pdb" />
     <file src="x64\Release\net462\libyara.NET.xml" target="build\x64\libyara.NET.xml" />
 
-    <file src="Microsoft.O365.Security.Native.libyara.NET.props" target="build\net46\" />
+    <!-- Runtime libraries for ARM64 -->
+    <file src="ARM64\Release\net462\libyara.NET.dll" target="build\ARM64\libyara.NET.dll" />
+    <file src="ARM64\Release\net462\libyara.NET.pdb" target="build\ARM64\libyara.NET.pdb" />
+    <file src="ARM64\Release\net462\libyara.NET.xml" target="build\ARM64\libyara.NET.xml" />
+
+    <file src="Microsoft.O365.Security.Native.libyara.NET.props" target="build\net462\" />
   </files>
 </package>

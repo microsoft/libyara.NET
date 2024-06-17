@@ -2,16 +2,16 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET.Core</id>
-    <version>4.2.3</version>
+    <version>4.5.1</version>
     <authors>Microsoft</authors>
     <license type="expression">BSD-3-Clause</license>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <title>Microsoft.O365.Security.Native.libyara.NET.Core</title>
-    <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Only targeted for 64-bit .NET Core build project.</description>
+    <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Only targeted for x64 or ARM64 .NET Core build project.</description>
     <releaseNotes>
-      - Update yara to 4.3.2
-      - Added functions for external variable definition at compile time
+      - Update yara to 4.5.1
+      - Add support for Windows ARM64
     </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>yara libyara virustotal</tags>
@@ -19,16 +19,41 @@
       <group targetFramework=".NETFramework4.6.2" />
       <group targetFramework="net6.0" />
     </dependencies>
+    <references>
+      <group targetFramework=".NETFramework4.6.2">
+        <reference file="libyara.NET.dll" />
+      </group>
+      <group targetFramework="net6.0">
+        <reference file="libyara.NET.dll" />
+      </group>
+    </references>
   </metadata>
   <files>
-    <file src="x64\Release\net462\libyara.NET.dll" target="lib\net462\libyara.NET.dll" />
-    <file src="x64\Release\net462\libyara.NET.pdb" target="lib\net462\libyara.NET.pdb" />
-    <file src="x64\Release\net462\libyara.NET.xml" target="lib\net462\libyara.NET.xml" />
+    <file src="ref\net462\libyara.NET.dll" target="ref\net462\libyara.NET.dll" />
+    <file src="ref\net6.0\libyara.NET.dll" target="ref\net6.0\libyara.NET.dll" />
+    <file src="ref\net462\libyara.NET.dll" target="lib\net462\libyara.NET.dll" />
+    <file src="ref\net6.0\libyara.NET.dll" target="lib\net6.0\libyara.NET.dll" />
 
-    <file src="x64\Release\net6.0\libyara.NET.dll" target="lib\net6.0\libyara.NET.dll" />
-    <file src="x64\Release\net6.0\libyara.NET.pdb" target="lib\net6.0\libyara.NET.pdb" />
-    <file src="x64\Release\net6.0\libyara.NET.xml" target="lib\net6.0\libyara.NET.xml" />
+    <file src="x64\Release\net462\libyara.NET.dll" target="runtimes\win-x64\lib\net462\libyara.NET.dll" />
+    <file src="x64\Release\net462\libyara.NET.pdb" target="runtimes\win-x64\lib\net462\libyara.NET.pdb" />
+    <file src="x64\Release\net462\libyara.NET.xml" target="runtimes\win-x64\lib\net462\libyara.NET.xml" />
+
+    <file src="x64\Release\net6.0\libyara.NET.dll" target="runtimes\win-x64\lib\net6.0\libyara.NET.dll" />
+    <file src="x64\Release\net6.0\libyara.NET.pdb" target="runtimes\win-x64\lib\net6.0\libyara.NET.pdb" />
+    <file src="x64\Release\net6.0\libyara.NET.xml" target="runtimes\win-x64\lib\net6.0\libyara.NET.xml" />
 
     <file src="x64\Release\net6.0\Ijwhost.dll" target="runtimes\win-x64\native\Ijwhost.dll" />
+
+    <file src="ARM64\Release\net462\libyara.NET.dll" target="runtimes\win-arm64\lib\net462\libyara.NET.dll" />
+    <file src="ARM64\Release\net462\libyara.NET.pdb" target="runtimes\win-arm64\lib\net462\libyara.NET.pdb" />
+    <file src="ARM64\Release\net462\libyara.NET.xml" target="runtimes\win-arm64\lib\net462\libyara.NET.xml" />
+
+    <file src="ARM64\Release\net6.0\libyara.NET.dll" target="runtimes\win-arm64\lib\net6.0\libyara.NET.dll" />
+    <file src="ARM64\Release\net6.0\libyara.NET.pdb" target="runtimes\win-arm64\lib\net6.0\libyara.NET.pdb" />
+    <file src="ARM64\Release\net6.0\libyara.NET.xml" target="runtimes\win-arm64\lib\net6.0\libyara.NET.xml" />
+
+    <file src="ARM64\Release\net6.0\Ijwhost.dll" target="runtimes\win-arm64\native\Ijwhost.dll" />
+
+    <file src="Microsoft.O365.Security.Native.libyara.NET.Core.targets" target="build\net462\" />
   </files>
 </package>

@@ -7,5 +7,8 @@
     <Reference Include="libyara.NET" Condition="'$(Platform)' == 'x64'">
       <HintPath>$(MSBuildThisFileDirectory)..\x64\libyara.NET.dll</HintPath>
     </Reference>
+    <Reference Include="libyara.NET" Condition="'$(Platform)' == 'ARM64'">
+      <HintPath>$(MSBuildThisFileDirectory)..\ARM64\libyara.NET.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
