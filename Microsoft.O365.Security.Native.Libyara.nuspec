@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Microsoft.O365.Security.Native.Libyara</id>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <authors>Microsoft</authors>
     <licenseUrl>https://github.com/Microsoft/libyara.NET/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Microsoft/libyara.NET</projectUrl>
@@ -14,9 +14,8 @@
       that use this package should use 'x86' or 'Win32' as the platform name to select the x86
       binaries, use 'x64' to select the x64 binaries and use 'ARM64' to select ARM64 binaries.</summary>
     <releaseNotes>
-      Version 1.1.0:
-      - Update yara to 4.5.1
-      - Add support for Windows ARM64
+      Version 1.1.1:
+      - Fix Linker Tools Error LNK2028 when built for Windows ARM64
     </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>native libyara vcpkg odspsecurity</tags>
