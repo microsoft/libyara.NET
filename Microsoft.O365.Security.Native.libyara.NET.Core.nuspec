@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET.Core</id>
-    <version>4.5.1</version>
+    <version>4.5.1.2</version>
     <authors>Microsoft</authors>
     <license type="expression">BSD-3-Clause</license>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
@@ -10,6 +10,10 @@
     <title>Microsoft.O365.Security.Native.libyara.NET.Core</title>
     <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C# or PowerShell tools. Only targeted for x64 or ARM64 .NET Core build project.</description>
     <releaseNotes>
+      Version 4.5.1.2
+      - Added support for .NET 8
+      - Removed support for .NET 6
+      Version 4.5.1
       - Update yara to 4.5.1
       - Add support for Windows ARM64
     </releaseNotes>
@@ -17,42 +21,42 @@
     <tags>yara libyara virustotal</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.6.2" />
-      <group targetFramework="net6.0" />
+      <group targetFramework="net8.0" />
     </dependencies>
     <references>
       <group targetFramework=".NETFramework4.6.2">
         <reference file="libyara.NET.dll" />
       </group>
-      <group targetFramework="net6.0">
+      <group targetFramework="net8.0">
         <reference file="libyara.NET.dll" />
       </group>
     </references>
   </metadata>
   <files>
     <file src="ref\net462\libyara.NET.dll" target="ref\net462\libyara.NET.dll" />
-    <file src="ref\net6.0\libyara.NET.dll" target="ref\net6.0\libyara.NET.dll" />
+    <file src="ref\net8.0\libyara.NET.dll" target="ref\net8.0\libyara.NET.dll" />
     <file src="ref\net462\libyara.NET.dll" target="lib\net462\libyara.NET.dll" />
-    <file src="ref\net6.0\libyara.NET.dll" target="lib\net6.0\libyara.NET.dll" />
+    <file src="ref\net8.0\libyara.NET.dll" target="lib\net8.0\libyara.NET.dll" />
 
     <file src="x64\Release\net462\libyara.NET.dll" target="runtimes\win-x64\lib\net462\libyara.NET.dll" />
     <file src="x64\Release\net462\libyara.NET.pdb" target="runtimes\win-x64\lib\net462\libyara.NET.pdb" />
     <file src="x64\Release\net462\libyara.NET.xml" target="runtimes\win-x64\lib\net462\libyara.NET.xml" />
 
-    <file src="x64\Release\net6.0\libyara.NET.dll" target="runtimes\win-x64\lib\net6.0\libyara.NET.dll" />
-    <file src="x64\Release\net6.0\libyara.NET.pdb" target="runtimes\win-x64\lib\net6.0\libyara.NET.pdb" />
-    <file src="x64\Release\net6.0\libyara.NET.xml" target="runtimes\win-x64\lib\net6.0\libyara.NET.xml" />
+    <file src="x64\Release\net8.0\libyara.NET.dll" target="runtimes\win-x64\lib\net8.0\libyara.NET.dll" />
+    <file src="x64\Release\net8.0\libyara.NET.pdb" target="runtimes\win-x64\lib\net8.0\libyara.NET.pdb" />
+    <file src="x64\Release\net8.0\libyara.NET.xml" target="runtimes\win-x64\lib\net8.0\libyara.NET.xml" />
 
-    <file src="x64\Release\net6.0\Ijwhost.dll" target="runtimes\win-x64\native\Ijwhost.dll" />
+    <file src="x64\Release\net8.0\Ijwhost.dll" target="runtimes\win-x64\native\Ijwhost.dll" />
 
     <file src="ARM64\Release\net462\libyara.NET.dll" target="runtimes\win-arm64\lib\net462\libyara.NET.dll" />
     <file src="ARM64\Release\net462\libyara.NET.pdb" target="runtimes\win-arm64\lib\net462\libyara.NET.pdb" />
     <file src="ARM64\Release\net462\libyara.NET.xml" target="runtimes\win-arm64\lib\net462\libyara.NET.xml" />
 
-    <file src="ARM64\Release\net6.0\libyara.NET.dll" target="runtimes\win-arm64\lib\net6.0\libyara.NET.dll" />
-    <file src="ARM64\Release\net6.0\libyara.NET.pdb" target="runtimes\win-arm64\lib\net6.0\libyara.NET.pdb" />
-    <file src="ARM64\Release\net6.0\libyara.NET.xml" target="runtimes\win-arm64\lib\net6.0\libyara.NET.xml" />
+    <file src="ARM64\Release\net8.0\libyara.NET.dll" target="runtimes\win-arm64\lib\net8.0\libyara.NET.dll" />
+    <file src="ARM64\Release\net8.0\libyara.NET.pdb" target="runtimes\win-arm64\lib\net8.0\libyara.NET.pdb" />
+    <file src="ARM64\Release\net8.0\libyara.NET.xml" target="runtimes\win-arm64\lib\net8.0\libyara.NET.xml" />
 
-    <file src="ARM64\Release\net6.0\Ijwhost.dll" target="runtimes\win-arm64\native\Ijwhost.dll" />
+    <file src="ARM64\Release\net8.0\Ijwhost.dll" target="runtimes\win-arm64\native\Ijwhost.dll" />
 
     <file src="Microsoft.O365.Security.Native.libyara.NET.Core.targets" target="build\net462\" />
   </files>

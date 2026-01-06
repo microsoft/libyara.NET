@@ -33,7 +33,7 @@
     <AssemblyName>libyara.NET</AssemblyName>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <CLRSupport>NetCore</CLRSupport>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(TargetFramework)\</OutDir>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -65,6 +65,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <TreatWarningAsError>false</TreatWarningAsError>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <DisableSpecificWarnings>4679</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalDependencies>user32.lib;gdi32.lib;advapi32.lib;crypt32.lib;ws2_32.lib</AdditionalDependencies>

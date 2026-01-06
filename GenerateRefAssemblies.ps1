@@ -13,7 +13,7 @@ if (Test-Path ".\ref") {
 
 $platforms = @("x64", "Win32", "ARM64")
 $configurations = @("Debug", "Release")
-$targetFrameworks = @("net6.0", "net462")
+$targetFrameworks = @("net8.0", "net462")
 $targetAssemblyName = "libyara.NET.dll"
 
 $generated = @()
@@ -26,7 +26,7 @@ $platforms | ForEach-Object {
             $targetAssembly = ".\$platform\$configuration\$targetFramework\$targetAssemblyName"
             if (($generated -notcontains $targetFramework) -and (Test-Path $targetAssembly)) {
                 Write-Host "Generating reference assembly for $targetAssembly"
-                & $refasmer -v -O "ref\$targetFramework" -c $targetAssembly
+                & $refasmer -v --omit-non-api-members=false -O "ref\$targetFramework" -c $targetAssembly
                 if (Test-Path ".\ref\$targetFramework\$targetAssemblyName") {
                     Write-Host "Reference assembly for $targetFramework generated successfully."
                     $generated += $targetFramework
