@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Microsoft.O365.Security.Native.libyara.NET</id>
-    <version>4.5.1.2</version>
+    <version>4.5.5</version>
     <authors>Microsoft</authors>
     <license type="expression">BSD-3-Clause</license>
     <projectUrl>https://github.com/Microsoft/libyara.NET/</projectUrl>
@@ -11,8 +11,11 @@
     <description>.NET wrapper for libyara built in C++ CLI used to easily incorporate yara into C#
       or PowerShell tools. Support x86, x64 and ARM64 of .NET framework 4.6.2</description>
     <releaseNotes>
-      - Update yara to 4.5.1
-      - Add support for Windows ARM64
+      Version 4.5.5
+       - Update yara to 4.5.5
+      Version 4.5.1
+       - Update yara to 4.5.1
+       - Add support for Windows ARM64
     </releaseNotes>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>yara libyara virustotal</tags>
